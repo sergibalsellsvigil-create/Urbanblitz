@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SISTEMA DE INTERACCIÓN - URBANBLITZ (VERSIÓN PROFESIONAL)
+    SISTEMA DE INTERACCIÓN - URBANBLITZ (VERSIÓN PROFESIONAL)
    ========================================================================== */
 
 // 1. VARIABLE GLOBAL DEL CARRITO (Con validación de seguridad)
@@ -98,11 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSelection('.size-btn', 'selected');
     setupSelection('.color-dot', 'selected');
 
-    // Manejo de Dropdowns para móviles (Mejorado para Firefox/Safari)
+    // Manejo de Dropdowns para móviles
     const dropdowns = document.querySelectorAll('.dropdown > a');
     dropdowns.forEach(dropdown => {
         dropdown.addEventListener('click', (e) => {
-            if (window.innerWidth < 1024) {
+            if (window.innerWidth < 950) { // Ajustado a tu media-query de CSS
                 e.preventDefault();
                 const menu = dropdown.nextElementSibling;
                 if (menu) {
@@ -112,4 +112,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- SECCIÓN 8: LÓGICA DEL MENÚ HAMBURGUESA ---
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navList = document.getElementById('nav-list');
+
+    if (menuBtn && navList) {
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            
+            // Cambia el icono de barras (bars) a una X (xmark)
+            const icon = menuBtn.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-xmark');
+            }
+        });
+    }
 });
