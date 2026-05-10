@@ -1,8 +1,8 @@
 /* ==========================================================================
-    URBANBLITZ - CSS INTEGRAL CORREGIDO (SIN FALLOS)
+    URBANBLITZ - CSS INTEGRAL CORREGIDO (SOLUCIÓN DROPDOWNS Y CARRUSEL)
    ========================================================================== */
 
-/* 1. VARIABLES INTEGRADAS (Para evitar conflictos) */
+/* 1. VARIABLES INTEGRADAS */
 :root {
     --rojo-corporativo: #ff0000;
     --negro-fondo: #050505;
@@ -14,7 +14,7 @@
     --glow-slogan: 0 0 20px rgba(255, 0, 0, 0.7);
 }
 
-/* 2. RESET TOTAL (Mata el azul de los enlaces y bordes feos) */
+/* 2. RESET TOTAL */
 * {
     margin: 0;
     padding: 0;
@@ -79,7 +79,38 @@ a {
     color: var(--rojo-corporativo) !important; 
 }
 
-.menu-toggle { display: none; } /* Oculto en PC */
+/* --- ARREGLO DE DROPDOWNS (AÑADIDO) --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--negro-menu);
+    border: 1px solid var(--rojo-corporativo);
+    list-style: none;
+    min-width: 180px;
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Mostrar al pasar el ratón */
+}
+/* -------------------------------------- */
+
+.menu-toggle { display: none; } 
 
 /* 4. CARRUSEL CON MOVIMIENTO REAL */
 .new-drops-carousel { 
@@ -92,7 +123,7 @@ a {
 .carousel-track { 
     display: flex; 
     width: max-content; 
-    animation: scroll-infinito 25s linear infinite !important; /* Animación activada */
+    animation: scroll-infinito 25s linear infinite !important; 
 }
 
 .carousel-track img {
@@ -103,16 +134,15 @@ a {
     border: 1px solid #333;
 }
 
-/* Movimiento del carrusel */
 @keyframes scroll-infinito {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-/* 5. SECCIÓN 3 CAJETILLAS (DESCUBRE EL CLAN) */
+/* 5. SECCIÓN 3 CAJETILLAS */
 .categorias-grid-3 {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; /* 3 Columnas fijas en PC */
+    grid-template-columns: repeat(3, 1fr) !important; 
     gap: 30px;
     max-width: var(--max-width);
     margin: 80px auto;
