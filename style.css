@@ -1,5 +1,5 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (VERSIÓN INTEGRAL CORREGIDA)
+    URBANBLITZ - STYLE.CSS (VERSIÓN FINAL CORREGIDA)
    ========================================================================== */
 
 /* RESET Y FONDO GLOBAL */
@@ -52,9 +52,8 @@ a {
     text-align: center;
 }
 
-/* BOTÓN MENÚ MÓVIL (Oculto en PC) */
 .menu-toggle {
-    display: none; /* Se activa en el media query */
+    display: none; 
     background: none;
     border: none;
     color: var(--rojo-corporativo);
@@ -82,7 +81,6 @@ a {
 
 .nav-list li a:hover, .nav-list li a.active { color: var(--rojo-corporativo); }
 
-/* DROPDOWN */
 .dropdown { position: relative; }
 .dropdown-menu { 
     display: none; 
@@ -158,6 +156,17 @@ a {
     border-top: 1px solid var(--gris-borde);
 }
 
+/* CORRECCIÓN PRÓXIMAMENTE */
+.texto-proximamente-red {
+    color: var(--rojo-corporativo);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
 .carousel-track {
     display: flex;
     width: calc(300px * 10); 
@@ -207,8 +216,6 @@ a {
     height: 100%; 
 }
 
-.product-image { position: relative; width: 100%; }
-
 .categoria-card-new img, .product-image img, .category-img {
     width: 100%;
     height: 450px;
@@ -216,12 +223,21 @@ a {
     display: block;
 }
 
-.info-card-content, .product-info-box {
+/* CORRECCIÓN CENTRADO BOTONES COLUMNAS */
+.info-card-content {
     padding: 25px;
     text-align: center;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centra el botón horizontalmente */
+    justify-content: center;
+}
+
+.info-card-content h3 {
+    margin-top: 0;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
 .product-name-urban { 
@@ -232,25 +248,16 @@ a {
     margin-bottom: 10px;
 }
 
-.drop-label { 
-    position: absolute !important;
-    top: 15px;
-    left: 15px;
-    background: var(--rojo-corporativo);
-    padding: 5px 12px;
-    font-weight: 900;
-    font-size: 0.7rem;
-    z-index: 10;
-}
-
-.btn-rojo-urban, .btn-urban {
+.btn-rojo-urban {
     background-color: var(--rojo-corporativo) !important;
     color: #fff !important;
-    padding: 12px;
+    padding: 15px 30px;
     font-weight: 900;
     text-transform: uppercase;
-    width: 100%;
+    width: fit-content; /* El botón solo ocupa lo que mide el texto */
     border: none;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
 /* ==========================================================================
@@ -276,10 +283,9 @@ a {
 .footer-legal { text-align: center; margin-top: 50px; color: #666; font-size: 0.8rem; }
 
 /* ==========================================================================
-    RESPONSIVO (MÓVIL Y TABLET) - SOLUCIÓN CENTRADO Y FOOTER
+    RESPONSIVO (MÓVIL Y TABLET)
    ========================================================================== */
 @media (max-width: 950px) {
-    /* Header Móvil: Forzar centrado del logo */
     .nav-container { 
         flex-direction: row; 
         justify-content: center; 
@@ -293,7 +299,6 @@ a {
         margin: 0 auto !important; 
     }
 
-    /* El botón no empuja al logo porque es absolute */
     .menu-toggle { 
         display: block; 
         position: absolute;
@@ -302,7 +307,6 @@ a {
         transform: translateY(-50%);
     }
 
-    /* Lista de navegación desplegable */
     .nav-list {
         display: none; 
         position: absolute;
@@ -320,7 +324,6 @@ a {
     .nav-list li { width: 100%; text-align: center; border-bottom: 1px solid #222; }
     .nav-list li a { display: block; padding: 20px; font-size: 1.1rem; }
 
-    /* Dropdowns en móvil */
     .dropdown-menu { 
         position: static; 
         transform: none; 
@@ -329,7 +332,6 @@ a {
         border: none;
     }
 
-    /* Grids a 1 columna */
     .categorias-grid-3, .product-grid, .category-grid { 
         grid-template-columns: 1fr; 
         gap: 40px;
@@ -337,7 +339,6 @@ a {
 
     .categoria-card-new img, .product-image img { height: 350px; }
 
-    /* Footer Responsive: Todo apilado y centrado */
     .footer-container { 
         grid-template-columns: 1fr; 
         text-align: center; 

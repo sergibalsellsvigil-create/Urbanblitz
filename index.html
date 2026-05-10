@@ -11,35 +11,36 @@
 </head>
 <body>
 
-   <header class="main-header">
-    <nav class="nav-container">
-        <button class="menu-toggle" id="mobile-menu-btn">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+    <header class="main-header">
+        <nav class="nav-container">
+            <button class="menu-toggle" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-        <h1 class="logo">URBANBLITZ</h1>
-        
-        <ul class="nav-list" id="nav-list">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="historia.html">Quiénes somos</a></li>
-            <li class="dropdown">
-                <a href="colecciones.html">Colecciones ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="limited-hoodies.html">Limited Edition</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="tienda.html" class="active">Tienda ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="tienda-hombre.html">Hombre</a></li>
-                    <li><a href="tienda-mujer.html">Mujer</a></li>
-                </ul>
-            </li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="carrito.html">🛒 <span id="cart-count">0</span></a></li>
-        </ul>
-    </nav>
-</header>
+            <h1 class="logo">URBANBLITZ</h1>
+            
+            <ul class="nav-list" id="nav-list">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="historia.html">Quiénes somos</a></li>
+                <li class="dropdown">
+                    <a href="colecciones.html">Colecciones ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="limited-hoodies.html">Limited Edition</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="tienda.html">Tienda ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tienda-hombre.html">Hombre</a></li>
+                        <li><a href="tienda-mujer.html">Mujer</a></li>
+                        <li><a href="tienda-unisex.html">Unisex</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="carrito.html">🛒 <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <section class="hero">
@@ -56,7 +57,7 @@
 
         <section class="new-drops-carousel">
             <header class="carousel-header">
-                <h3>PRÓXIMAMENTE</h3>
+                <h3 class="texto-proximamente-red">PRÓXIMAMENTE</h3>
             </header>
             <figure class="carousel-track">
                 <img src="img/producto1.jpg" alt="Próximamente">
@@ -70,9 +71,9 @@
 
         <section class="categorias-home">
             <h2 class="titulo-categorias-red">DESCUBRE EL CLAN</h2>
-            <nav class="categorias-grid-3">
+            <div class="categorias-grid-3">
                 <article class="categoria-card-new">
-                    <img src="img/cat-unisex.jpg" alt=" ">
+                    <img src="img/index-unisex.png" alt="Unisex">
                     <section class="info-card-content">
                         <h3>UNISEX</h3>
                         <p>Básicos esenciales de alta calidad.</p>
@@ -81,7 +82,7 @@
                 </article>
 
                 <article class="categoria-card-new">
-                    <img src="img/quienes-somos.jpg" alt=" ">
+                    <img src="img/index-somos.png" alt="Quiénes Somos">
                     <section class="info-card-content">
                         <h3>QUIÉNES SOMOS</h3>
                         <p>Conoce la historia detrás del clan.</p>
@@ -90,66 +91,58 @@
                 </article>
 
                 <article class="categoria-card-new">
-                    <img src="img/calidad-dtg.jpg" alt=" ">
+                    <img src="img/index-calidad.png" alt="Calidad DTG">
                     <section class="info-card-content">
                         <h3>CALIDAD DTG</h3>
                         <p>Impresión de última generación.</p>
                         <a href="calidad.html" class="btn-rojo-urban">SABER MÁS</a>
                     </section>
                 </article>
-            </nav>
+            </div>
         </section>
     </main>
 
     <footer class="main-footer">
-    <section class="footer-container">
-        <article class="footer-brand">
-            <h3 class="logo-footer">URBANBLITZ</h3>
-            <p class="slogan">NO LIMITS. NO EXCUSES.</p>
-            <p class="est-date">EST. 2026 — Streetwear Collective.</p>
-            
-            <div class="footer-socials">
-                <a href="https://www.instagram.com/urbanblitz.shop2026?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@urbanblitz.shop?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-            </div>
-        </article>
+        <section class="footer-container">
+            <article class="footer-brand">
+                <h3 class="logo-footer">URBANBLITZ</h3>
+                <p class="slogan">NO LIMITS. NO EXCUSES.</p>
+                <p class="est-date">EST. 2026 — Streetwear Collective.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/urbanblitz.shop2026" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@urbanblitz.shop" target="_blank" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </article>
 
-        <nav class="footer-nav">
-            <h3 class="footer-title">Explorar</h3>
-            <ul class="footer-list">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="historia.html">Quiénes somos</a></li>
-                <li><a href="tienda.html">Tienda Oficial</a></li>
-                <li><a href="colecciones.html">Colecciones</a></li>
-            </ul>
-        </nav>
+            <nav class="footer-nav">
+                <h3 class="footer-title">Explorar</h3>
+                <ul class="footer-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="historia.html">Quiénes somos</a></li>
+                    <li><a href="tienda.html">Tienda Oficial</a></li>
+                    <li><a href="colecciones.html">Colecciones</a></li>
+                </ul>
+            </nav>
 
-        <nav class="footer-support">
-            <h3 class="footer-title">Atención al Clan</h3>
-            <ul class="footer-list">
-                <li><a href="contacto.html" class="highlight-link">¿Necesitas ayuda?</a></li>
-                <li><a href="aviso-legal.html">Aviso Legal</a></li>
-                <li><a href="politica-privacidad.html">Privacidad</a></li>
-            </ul>
-        </nav>
-    </section>
+            <nav class="footer-support">
+                <h3 class="footer-title">Atención al Clan</h3>
+                <ul class="footer-list">
+                    <li><a href="contacto.html" class="highlight-link">¿Necesitas ayuda?</a></li>
+                    <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="politica-privacidad.html">Privacidad</a></li>
+                </ul>
+            </nav>
+        </section>
 
-    <section class="footer-legal">
-        <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
-    </section>
-</footer>
+        <section class="footer-legal">
+            <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
+        </section>
+    </footer>
 
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navList = document.getElementById('nav-list');
-
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
