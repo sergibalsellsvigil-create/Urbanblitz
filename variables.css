@@ -1,20 +1,20 @@
 /* ==========================================================================
-   VARIABLES DE ESTILO - URBANBLITZ (OFFICIAL)
+    VARIABLES DE ESTILO - URBANBLITZ (OFFICIAL)
    ========================================================================== */
 :root {
-    /* ROJOS */
+    /* COLORES CORPORATIVOS */
     --rojo-corporativo: #ff0000;
     --rojo-hover: #cc0000;
     --rojo-oscuro: #660000;
     --rojo-transparente: rgba(255, 0, 0, 0.1); 
 
-    /* NEGROS */
+    /* ESCALA DE NEGROS (PROFUNDIDAD) */
     --negro-fondo: #050505;
     --negro-tarjeta: #0d0d0d;
     --negro-menu: #000000;
     --negro-footer: #030303;
 
-    /* GRISES */
+    /* GRISES Y BORDES */
     --gris-borde: #1a1a1a;
     --gris-borde-fuerte: #333333;
     
@@ -24,6 +24,8 @@
     --texto-deshabilitado: #444444;
     
     /* EFECTOS DE LUZ (GLOW) */
+    /* Esta es la que usa el Slogan "No Limits" para brillar */
+    --glow-slogan: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
     --glow-neon-hero: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--rojo-corporativo), 0 0 40px var(--rojo-corporativo), 0 0 80px var(--rojo-corporativo);
     --glow-rojo: 0 0 20px rgba(255, 0, 0, 0.6);
     --glow-suave: 0 0 15px rgba(255, 0, 0, 0.3);
@@ -35,8 +37,10 @@
     --fuente-texto: 'Inter', sans-serif;
     
     /* DINÁMICA Y ESTRUCTURA */
-    --transicion: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transicion: all 0.3s ease; /* Ajustada a una más estándar y suave */
+    --transicion-zoom: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --sombra-solida: 4px 4px 0px var(--rojo-oscuro);
     --espacio-seccion: 100px;
-    --max-width: 1200px;
+    --max-width: 1400px; /* Un pelín más ancho para que luzca mejor en monitores grandes */
+    --velocidad-carrusel: 25s;
 }
