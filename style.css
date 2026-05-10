@@ -1,5 +1,5 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (DEFINITIVO CON EFECTOS HOVER)
+    URBANBLITZ - STYLE.CSS (DEFINITIVO: CORRECCIÓN HOVER FOOTER)
    ========================================================================== */
 
 /* RESET Y FONDO GLOBAL */
@@ -58,12 +58,12 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 /* HOVER MENÚ PRINCIPAL */
 .nav-list li a:hover { 
     color: var(--rojo-corporativo); 
-    text-shadow: 0 0 10px var(--rojo-corporativo); /* Efecto brillo al pasar ratón */
+    text-shadow: 0 0 10px var(--rojo-corporativo);
 }
 
 .nav-list li a.active { color: var(--rojo-corporativo); }
 
-/* SUBMENÚS (DROPDOWNS) */
+/* SUBMENÚS */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -79,16 +79,10 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 }
 
 .dropdown-menu li a { padding: 8px 20px; display: block; font-size: 0.8rem; }
-
-/* HOVER SUBMENÚ */
-.dropdown-menu li a:hover {
-    background-color: var(--rojo-corporativo);
-    color: white !important;
-}
-
+.dropdown-menu li a:hover { background-color: var(--rojo-corporativo); color: white !important; }
 .dropdown:hover .dropdown-menu { display: block; }
 
-/* HERO Y BOTÓN EXPLORAR */
+/* HERO Y ESLOGAN CORREGIDO */
 .hero {
     position: relative;
     height: 100vh;
@@ -118,7 +112,6 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     display: block;
 }
 
-/* BOTÓN HERO CON HOVER INVERSO */
 .btn-add-cart-hero {
     display: inline-block;
     background-color: var(--rojo-corporativo) !important;
@@ -134,12 +127,11 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     background-color: white !important;
     color: var(--rojo-corporativo) !important;
     border-color: white;
-    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    transform: translateY(-3px);
 }
 
-/* CARRUSEL Y TÍTULO PRÓXIMAMENTE */
+/* CARRUSEL */
 .carousel-header { width: 100%; display: flex; justify-content: center; background: #000; }
-
 .texto-proximamente-red {
     color: var(--rojo-corporativo) !important;
     text-align: center;
@@ -148,7 +140,8 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     text-transform: uppercase;
     margin: 50px 0 30px 0;
 }
-
+.new-drops-carousel { overflow: hidden; background: #000; padding-bottom: 60px; }
+.carousel-track { display: flex; width: max-content; animation: scroll-infinito 25s linear infinite; }
 .carousel-track img {
     width: 280px; height: 380px;
     object-fit: cover; margin: 0 15px;
@@ -156,21 +149,16 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     background-color: #111;
     transition: 0.5s;
 }
-
-.carousel-track img:hover {
-    border-color: var(--rojo-corporativo);
-    transform: scale(1.05); /* Zoom suave al pasar por las fotos */
-}
+.carousel-track img:hover { border-color: var(--rojo-corporativo); transform: scale(1.05); }
 
 @keyframes scroll-infinito {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-.new-drops-carousel { overflow: hidden; background: #000; padding-bottom: 60px; }
-.carousel-track { display: flex; width: max-content; animation: scroll-infinito 25s linear infinite; }
-
-/* FOOTER CON HOVER */
+/* ==========================================================================
+    FOOTER (CORRECCIÓN HOVER)
+   ========================================================================== */
 .main-footer { 
     background: var(--negro-footer);
     border-top: 2px solid var(--rojo-corporativo); 
@@ -187,16 +175,19 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 
 .footer-list { list-style: none; padding: 0; }
 
+/* Estilo base de los enlaces del footer */
 .footer-list li a { 
-    color: var(--texto-secundario) !important; 
+    color: var(--texto-secundario); /* Sin !important aquí para permitir el hover */
     font-size: 0.9rem;
-    transition: 0.3s;
+    transition: 0.3s ease;
+    display: inline-block;
 }
 
-/* HOVER EN FOOTER */
+/* Hover corregido para el footer */
 .footer-list li a:hover { 
-    color: var(--rojo-corporativo) !important; 
-    padding-left: 5px; /* Efecto de desplazamiento a la derecha */
+    color: var(--rojo-corporativo) !important; /* Forzamos el rojo en hover */
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+    transform: translateX(5px); /* Desplazamiento sutil */
 }
 
 /* RESPONSIVO */
