@@ -175,7 +175,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   4. HERO (SLOGAN ESTILO INDEX)
+   4. HERO Y ESLOGAN (AJUSTADO: TEXTO MÁS PEQUEÑO Y SUBIDO)
    ------------------------------------------------------------------------- */
 .hero {
     position: relative;
@@ -190,35 +190,37 @@ img {
 }
 
 .slogan-hero {
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-size: clamp(2rem, 5vw, 3.8rem); /* Un poco más pequeño que antes */
     color: #ffffff !important;
     text-transform: uppercase;
     font-weight: 900;
     line-height: 1.1;
-    margin: 0 0 20px;
-    text-shadow: 0 0 20px var(--rojo-corporativo), 0 0 40px var(--rojo-corporativo);
+    margin: 0 0 25px; /* Espacio con el botón */
+    text-shadow: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
     display: block;
 }
 
+/* BOTÓN MÁS GRANDE Y VISIBLE */
 .btn-add-cart-hero {
     display: inline-block;
     background-color: var(--rojo-corporativo);
     color: #ffffff;
-    padding: 16px 40px;
+    padding: 22px 55px; /* Aumentado el tamaño de la cajetilla */
     font-weight: 900;
-    font-size: 1rem;
+    font-size: 1.1rem; /* Texto un poco más grande dentro */
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-decoration: none;
     border: 2px solid var(--rojo-corporativo);
     transition: 0.3s;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Glow más fuerte */
 }
 
 .btn-add-cart-hero:hover {
     background-color: transparent;
     color: var(--rojo-corporativo);
-    box-shadow: 0 0 30px var(--rojo-corporativo);
+    box-shadow: 0 0 40px var(--rojo-corporativo);
+    transform: scale(1.05);
 }
 
 /* -------------------------------------------------------------------------
@@ -271,11 +273,10 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   7. SECCIÓN FINAL HISTORIA (SUBIR TEXTO Y BOTÓN)
+   7. SECCIÓN FINAL HISTORIA (SUBIR BLOQUE ELIMINANDO PADDING SUPERIOR)
    ------------------------------------------------------------------------- */
-/* Estilo específico para que "No Limits" en Historia suba más */
 main section[style*="text-align: center"] {
-    padding-top: 40px !important; /* Subimos la sección */
+    padding-top: 20px !important; /* Casi sin margen arriba para que suba */
     padding-bottom: 80px !important;
 }
 
@@ -341,4 +342,5 @@ main section[style*="text-align: center"] {
 @media (max-width: 950px) {
     .nav-user-actions-top { display: none; }
     .categorias-grid-3 { grid-template-columns: 1fr; }
+    .btn-add-cart-hero { padding: 18px 40px; font-size: 0.9rem; }
 }
