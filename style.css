@@ -1,48 +1,180 @@
-/* --- MEJORAS ESTÉTICAS FINALES --- */
+/* ==========================================================================
+   URBANBLITZ - STYLE.CSS FINAL (SOLUCIÓN TOTAL DE DISEÑO)
+   ========================================================================== */
 
-/* Mejora del Slogan Hero */
+:root {
+    --rojo-corporativo: #ff0000;
+    --negro-fondo: #050505;
+    --negro-tarjeta: #0d0d0d;
+    --negro-menu: #000000;
+    --blanco-puro: #ffffff;
+    --fuente-logo: 'Sedgwick Ave', cursive;
+    --fuente-texto: 'Inter', sans-serif;
+    --max-width: 1200px;
+}
+
+/* 1. RESET Y LIMPIEZA */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: var(--fuente-texto); 
+    background-color: var(--negro-fondo) !important;
+    color: var(--blanco-puro); 
+    overflow-x: hidden; 
+}
+
+a { text-decoration: none !important; color: inherit !important; }
+
+/* 2. HEADER Y DROPDOWNS */
+.main-header { 
+    background-color: var(--negro-menu);
+    padding: 20px 0; 
+    border-bottom: 2px solid var(--rojo-corporativo);
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo { 
+    font-family: var(--fuente-logo);
+    font-size: clamp(2.5rem, 6vw, 3.8rem); 
+    color: var(--rojo-corporativo) !important; 
+    text-transform: uppercase; 
+    letter-spacing: 12px;
+    margin-bottom: 10px;
+}
+
+.nav-list { display: flex; gap: 30px; list-style: none; }
+.nav-list li a { font-weight: 900; text-transform: uppercase; font-size: 0.9rem; }
+
+.dropdown { position: relative; }
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--negro-menu);
+    border: 1px solid var(--rojo-corporativo);
+    display: none;
+    min-width: 180px;
+    z-index: 1000;
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li a { padding: 10px; display: block; font-size: 0.8rem; }
+
+/* 3. FIX IMAGEN 1: HERO (PANTALLA COMPLETA) */
+.hero {
+    position: relative;
+    height: 100vh !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover !important;
+    z-index: 1;
+}
+
+.hero-content { position: relative; z-index: 2; text-align: center; }
 .slogan-hero {
-    letter-spacing: 2px;
-    text-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 10px rgba(0,0,0,0.5) !important;
+    font-size: clamp(2.5rem, 8vw, 5.5rem) !important;
+    font-weight: 900;
+    text-shadow: 0 0 20px var(--rojo-corporativo);
 }
 
-/* Efecto Premium en Cajetillas */
+/* 4. FIX IMAGEN 2: PRÓXIMAMENTE (ROJO Y CENTRADO) */
+.texto-proximamente-red {
+    color: var(--rojo-corporativo) !important;
+    text-align: center !important;
+    width: 100%;
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+/* 5. FIX IMAGEN 3: DESCUBRE EL CLAN Y ZOOM */
+.titulo-categorias-red {
+    color: var(--rojo-corporativo) !important;
+    text-align: center !important;
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 60px 0;
+}
+
+.categorias-grid-3 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
 .categoria-card-new {
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Transición suave estilo Apple */
-}
-
-.categoria-card-new:hover {
-    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
-    transform: translateY(-10px);
+    overflow: hidden;
+    background: var(--negro-tarjeta);
+    border: 1px solid #1a1a1a;
 }
 
 .categoria-card-new img {
-    transition: transform 0.8s ease;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
 .categoria-card-new:hover img {
-    transform: scale(1.08);
+    transform: scale(1.1); /* ZOOM SUAVE */
 }
 
-/* Botones con más "fuerza" */
-.btn-rojo-urban, .btn-add-cart-hero {
-    letter-spacing: 3px;
-    font-size: 0.75rem;
-    border-radius: 0; /* Streetwear es cuadrado, no redondo */
-    position: relative;
-    overflow: hidden;
+/* 6. FIX IMAGEN 4: FOOTER */
+.main-footer {
+    background: #000;
+    border-top: 2px solid var(--rojo-corporativo);
+    padding: 60px 20px;
+    margin-top: 100px;
 }
 
-/* Animación extra al botón */
-.btn-rojo-urban:hover {
-    background-color: #fff !important;
-    color: #ff0000 !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
 }
 
-/* Separación elegante de secciones */
-.categorias-home {
-    padding: 100px 0;
-    border-top: 1px solid #1a1a1a;
+/* CARRUSEL ANIMACIÓN */
+.carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-infinito 25s linear infinite;
+}
+
+@keyframes scroll-infinito {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* RESPONSIVO MÓVIL */
+@media (max-width: 950px) {
+    .nav-list { display: none; }
+    .categorias-grid-3 { grid-template-columns: 1fr !important; }
+    .footer-container { grid-template-columns: 1fr; }
 }
