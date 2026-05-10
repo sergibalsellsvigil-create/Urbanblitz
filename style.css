@@ -1,11 +1,11 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (MENÚ HORIZONTAL FIJO Y HERO MANTENIDO)
+    URBANBLITZ - STYLE.CSS (CORRECCIÓN FINAL: MENÚ ULTRA-SLIM)
    ========================================================================== */
 
 /* 1. RESET Y CONFIGURACIÓN BASE */
 body { 
     margin: 0; 
-    font-family: var(--fuente-texto), sans-serif; 
+    font-family: var(--fuente-texto); 
     background-color: var(--negro-fondo) !important;
     color: var(--blanco-puro); 
     overflow-x: hidden; 
@@ -13,13 +13,13 @@ body {
 
 a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 
-/* 2. HEADER (SOLUCIÓN: TODO EN UNA LÍNEA Y FIJO ARRIBA) */
+/* 2. HEADER (ARREGLO: ULTRA-PEQUEÑO Y FIJO ARRIBA) */
 .main-header { 
     background-color: var(--negro-menu) !important;
-    padding: 10px 0 !important; /* Muy fino para que no estorbe */
+    padding: 10px 0 !important; /* Altura mínima para que no estorbe */
     border-bottom: 2px solid var(--rojo-corporativo) !important;
     z-index: 10000; 
-    position: fixed; /* Se queda arriba siempre */
+    position: fixed; /* Se queda arriba al hacer scroll */
     top: 0;
     width: 100%;
 }
@@ -28,46 +28,54 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     max-width: var(--max-width);
     margin: 0 auto;
     display: flex;
-    flex-direction: row !important; /* Fuerza una sola línea horizontal */
-    justify-content: space-between; /* Logo a un lado, menú al otro */
+    flex-direction: row !important; /* Logo y menú en la misma línea */
+    justify-content: space-between; 
     align-items: center; 
-    padding: 0 5%;
+    padding: 0 40px;
 }
 
 .logo { 
-    font-family: var(--fuente-logo), cursive !important; 
-    font-size: 1.8rem !important; /* Tamaño contenido */
-    color: var(--rojo-corporativo) !important; 
+    font-family: var(--fuente-logo); 
+    font-size: 1.8rem !important; /* Tamaño reducido para elegancia */
+    color: var(--rojo-corporativo); 
     text-transform: uppercase; 
     letter-spacing: 5px !important; 
-    font-weight: 900;
     margin: 0;
+    font-weight: 900;
 }
 
 .nav-list { 
     display: flex; 
-    gap: 25px !important; 
+    gap: 25px; 
     list-style: none; 
     padding: 0;
     margin: 0;
 }
 
 .nav-list li a { 
-    font-weight: 900 !important; 
+    font-weight: 900; 
     text-transform: uppercase; 
-    font-size: 0.8rem !important;
-    color: var(--blanco-puro) !important;
+    font-size: 0.8rem !important; /* Letra pequeña estilo profesional */
+    color: var(--blanco-puro);
     letter-spacing: 1px;
 }
 
 .nav-list li a:hover { 
-    color: var(--rojo-corporativo) !important; 
+    color: var(--rojo-corporativo); 
+    text-shadow: 0 0 10px var(--rojo-corporativo); 
 }
 
 /* OCULTAR MENÚ HAMBURGUESA EN PC */
-.menu-toggle { display: none; }
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--blanco-puro);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 
-/* 3. HERO (MANTENIDO IGUAL QUE EL PASO 1) */
+/* 3. HERO (MANTENIDO EXACTAMENTE IGUAL) */
 .hero {
     position: relative;
     height: 100vh !important;
@@ -116,15 +124,22 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     text-decoration: none;
     margin-top: 20px;
     border: 2px solid var(--rojo-corporativo);
+    transition: 0.3s;
 }
 
-/* 4. SECCIÓN DESCUBRE EL CLAN (MANTENIDA IGUAL) */
+.btn-add-cart-hero:hover {
+    background-color: white !important;
+    color: var(--rojo-corporativo) !important;
+    border-color: white;
+}
+
+/* 4. SECCIÓN DESCUBRE EL CLAN (MANTENIDO IGUAL) */
 .titulo-categorias-red {
     color: var(--rojo-corporativo);
     font-size: clamp(2.2rem, 7vw, 4rem);
     font-weight: 900;
     text-align: center;
-    margin: 120px 0 40px; /* Más margen arriba para que el menú fijo no lo tape */
+    margin: 120px 0 40px; /* Margen extra arriba para no chocar con el menú fixed */
     text-transform: uppercase;
 }
 
@@ -142,6 +157,13 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     border: 1px solid var(--gris-borde);
     transition: 0.3s;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.categoria-card-new:hover { 
+    border-color: var(--rojo-corporativo); 
+    transform: translateY(-5px);
 }
 
 .categoria-card-new img {
@@ -151,15 +173,44 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     display: block;
 }
 
-/* 5. FOOTER */
+.info-card-content { padding: 30px; text-align: center; }
+
+.btn-rojo-urban {
+    display: inline-block;
+    background-color: var(--rojo-corporativo) !important;
+    color: #fff !important;
+    padding: 12px 25px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: 2px solid var(--rojo-corporativo);
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-rojo-urban:hover { 
+    background-color: white !important; 
+    color: var(--rojo-corporativo) !important; 
+}
+
+/* 5. FOOTER (MANTENIDO IGUAL) */
 .main-footer { 
     background: var(--negro-footer);
     border-top: 2px solid var(--rojo-corporativo); 
     padding: 60px 20px; 
 }
 
+.footer-container { 
+    max-width: var(--max-width); 
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 40px;
+}
+
 /* 6. RESPONSIVO */
 @media (max-width: 950px) {
+    .menu-toggle { display: block; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
     .nav-list { display: none; }
     .categorias-grid-3 { grid-template-columns: 1fr !important; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
 }
