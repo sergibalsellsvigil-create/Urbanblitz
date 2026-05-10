@@ -1,5 +1,5 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (CORRECCIÓN DEFINITIVA DE INTERACTIVIDAD)
+    URBANBLITZ - STYLE.CSS (VERSIÓN COMPLETA + CARRUSEL RECUPERADO)
    ========================================================================== */
 
 /* 1. RESET Y CONFIGURACIÓN BASE */
@@ -12,7 +12,6 @@ body {
     line-height: 1.6; 
 }
 
-/* Transición para que los cambios de color no sean bruscos */
 a, button, i { 
     text-decoration: none; 
     transition: all 0.3s ease-in-out !important; 
@@ -66,14 +65,11 @@ a, button, i {
     color: var(--blanco-puro);
 }
 
-/* HOVER NAVEGACIÓN PRINCIPAL */
-.nav-list li a:hover, 
-.nav-list li a.active { 
+.nav-list li a:hover, .nav-list li a.active { 
     color: var(--rojo-corporativo) !important; 
     text-shadow: 0 0 8px var(--rojo-corporativo);
 }
 
-/* DROPDOWN */
 .dropdown { position: relative; }
 .dropdown-menu { 
     display: none; 
@@ -127,7 +123,43 @@ a, button, i {
     transform: translateY(-3px);
 }
 
-/* 4. BOTONES DEL INDEX (ACCEDER, LEER MÁS...) - AQUÍ ESTABA EL FALLO */
+/* 4. CARRUSEL (RECUPERADO) */
+.new-drops-carousel {
+    padding: 60px 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.texto-proximamente-red {
+    color: var(--rojo-corporativo);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.carousel-track {
+    display: flex;
+    width: calc(300px * 10); 
+    animation: scroll-infinito 25s linear infinite;
+}
+
+.carousel-track img {
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    margin: 0 15px;
+    border: 1px solid #222;
+}
+
+@keyframes scroll-infinito {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-310px * 4)); }
+}
+
+/* 5. BOTONES Y GRID CATEGORÍAS */
 .categorias-grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -135,6 +167,23 @@ a, button, i {
     max-width: var(--max-width);
     margin: 50px auto;
     padding: 0 20px;
+}
+
+.categoria-card-new {
+    background: var(--negro-tarjeta);
+    border: 1px solid var(--gris-borde);
+    overflow: hidden;
+}
+
+.categoria-card-new img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.categoria-card-new:hover img {
+    transform: scale(1.05);
 }
 
 .btn-rojo-urban {
@@ -147,14 +196,12 @@ a, button, i {
     border: none;
 }
 
-/* HOVER BOTONES INDEX: DE ROJO A BLANCO */
 .btn-rojo-urban:hover {
     background-color: white !important;
     color: var(--rojo-corporativo) !important;
-    transform: scale(1.05);
 }
 
-/* 5. FOOTER (CORRECCIÓN DE ENLACES) */
+/* 6. FOOTER */
 .main-footer { 
     background: var(--negro-footer); 
     border-top: 2px solid var(--rojo-corporativo); 
@@ -170,11 +217,9 @@ a, button, i {
     gap: 40px; 
 }
 
-/* Redes sociales */
 .footer-socials a { color: white !important; font-size: 1.5rem; margin-right: 10px; }
 .footer-socials a:hover { color: var(--rojo-corporativo) !important; transform: translateY(-5px); }
 
-/* Enlaces de las listas del footer */
 .footer-list { list-style: none; padding: 0; }
 .footer-list li a { 
     color: #ccc !important; 
@@ -182,13 +227,12 @@ a, button, i {
     display: inline-block;
 }
 
-/* HOVER ENLACES FOOTER: DE GRIS A ROJO */
 .footer-list li a:hover { 
     color: var(--rojo-corporativo) !important; 
-    padding-left: 8px; /* Efecto de movimiento */
+    padding-left: 8px;
 }
 
-/* 6. RESPONSIVO BÁSICO */
+/* 7. RESPONSIVO */
 @media (max-width: 950px) {
     .nav-list { display: none; }
     .categorias-grid-3 { grid-template-columns: 1fr; }
