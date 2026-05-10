@@ -117,7 +117,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   3. DROPDOWN (CORREGIDO PARA PERMITIR CLIC EN ENLACE PADRE)
+   3. DROPDOWN
    ------------------------------------------------------------------------- */
 .dropdown {
     position: relative;
@@ -137,7 +137,6 @@ img {
     margin: 0;
     min-width: 180px;
     z-index: 9999;
-    
     margin-top: 10px; 
     padding-top: 10px;
 }
@@ -176,7 +175,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   4. HERO (BAJADO PARA EVITAR CHOQUE CON MENÚ)
+   4. HERO (SLOGAN ESTILO INDEX)
    ------------------------------------------------------------------------- */
 .hero {
     position: relative;
@@ -190,28 +189,9 @@ img {
     padding-top: 250px; 
 }
 
-.hero-bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    filter: brightness(0.4);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    width: 100%;
-    padding: 0 20px;
-}
-
 .slogan-hero {
     font-size: clamp(2.8rem, 7vw, 5.5rem);
-    color: #ffffff;
+    color: #ffffff !important;
     text-transform: uppercase;
     font-weight: 900;
     line-height: 1.1;
@@ -220,45 +200,29 @@ img {
     display: block;
 }
 
-.hero-content p {
-    font-size: 1.3rem;
-    color: var(--blanco-puro);
-    opacity: 0.85;
-    margin: 0 0 30px;
-    letter-spacing: 0.5px;
-}
-
-.hero-title {
-    font-size: clamp(2rem, 6vw, 4rem);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    color: var(--blanco-puro);
-    margin: 0 0 15px;
-}
-
 .btn-add-cart-hero {
     display: inline-block;
     background-color: var(--rojo-corporativo);
     color: #ffffff;
     padding: 16px 40px;
     font-weight: 900;
-    font-size: 0.85rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
     border: 2px solid var(--rojo-corporativo);
-    transition: background 0.3s, color 0.3s;
-    margin-top: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
 }
 
 .btn-add-cart-hero:hover {
     background-color: transparent;
     color: var(--rojo-corporativo);
+    box-shadow: 0 0 30px var(--rojo-corporativo);
 }
 
 /* -------------------------------------------------------------------------
-   5. CARRUSEL "PROXIMAMENTE"
+   5. CARRUSEL
    ------------------------------------------------------------------------- */
 .new-drops-carousel {
     overflow: hidden;
@@ -266,22 +230,6 @@ img {
     border-top: 1px solid var(--gris-borde);
     border-bottom: 1px solid var(--gris-borde);
     padding: 25px 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-}
-
-.carousel-header {
-    text-align: center;
-    margin-bottom: 22px;
-}
-
-.texto-proximamente-red {
-    color: var(--rojo-corporativo);
-    font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin: 0;
 }
 
 .carousel-track {
@@ -289,26 +237,6 @@ img {
     gap: 20px;
     animation: scrollCarousel 18s linear infinite;
     width: max-content;
-    margin: 0;
-    padding: 0;
-}
-
-.new-drops-carousel:hover .carousel-track {
-    animation-play-state: paused;
-}
-
-.carousel-track img {
-    height: 260px;
-    width: 260px;
-    object-fit: cover;
-    filter: brightness(0.75);
-    flex-shrink: 0;
-    transition: filter 0.3s, transform 0.3s;
-}
-
-.carousel-track img:hover {
-    filter: brightness(1);
-    transform: scale(1.03);
 }
 
 @keyframes scrollCarousel {
@@ -317,22 +245,8 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   6. SECCIÓN "DESCUBRE EL CLAN" / QUIÉNES SOMOS (CON GLOW ROJO FIJO)
+   6. CAJETILLAS HISTORIA (GLOW ROJO FIJO)
    ------------------------------------------------------------------------- */
-.categorias-home {
-    padding-bottom: 80px;
-}
-
-.titulo-categorias-red {
-    color: var(--rojo-corporativo);
-    font-size: 1.8rem;
-    font-weight: 900;
-    text-align: center;
-    margin: 100px 0 50px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-}
-
 .categorias-grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -342,254 +256,31 @@ img {
     padding: 0 20px;
 }
 
-/* CAJETILLAS DE HISTORIA CON GLOW ROJO FIJO */
 .value-card-story {
     background: var(--negro-tarjeta);
     border: 1px solid var(--rojo-corporativo) !important;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Glow fijo */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); 
     padding: 50px 30px;
     text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
+    transition: 0.3s ease;
 }
 
 .value-card-story:hover {
-    box-shadow: 0 0 30px var(--rojo-corporativo); /* Glow más fuerte en hover */
+    box-shadow: 0 0 30px var(--rojo-corporativo);
     transform: translateY(-8px);
 }
 
-.categoria-card-new {
-    background: var(--negro-tarjeta);
-    border: 1px solid var(--gris-borde);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; 
-}
-
-.categoria-card-new:hover {
-    transform: translateY(-5px);
-    border-color: var(--rojo-corporativo);
-    box-shadow: 0 0 20px var(--rojo-corporativo); 
-}
-
-.categoria-card-new > img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease, filter 0.3s;
-}
-
-.categoria-card-new:hover > img {
-    filter: brightness(1.05);
-    transform: scale(1.06);
-}
-
-.categoria-card-new .info-card-content {
-    padding: 28px 22px 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    text-align: center;
-    flex: 1;
-    background: var(--negro-tarjeta);
-}
-
-.categoria-card-new .info-card-content h3 {
-    font-family: var(--fuente-texto);
-    font-weight: 900;
-    font-size: 0.9rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--blanco-puro);
-    margin: 0;
-}
-
-.categoria-card-new .info-card-content p {
-    font-size: 0.85rem;
-    color: var(--texto-secundario);
-    margin: 0;
-    line-height: 1.5;
-}
-
 /* -------------------------------------------------------------------------
-   7. BOTONES ROJOS GLOBALES
+   7. SECCIÓN FINAL HISTORIA (SUBIR TEXTO Y BOTÓN)
    ------------------------------------------------------------------------- */
-.btn-rojo-urban {
-    display: inline-block;
-    background-color: var(--rojo-corporativo);
-    color: #ffffff;
-    padding: 13px 28px;
-    font-family: var(--fuente-texto);
-    font-weight: 900;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 2px solid var(--rojo-corporativo);
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    transition: background 0.3s, color 0.3s;
-    margin-top: 5px;
-}
-
-.btn-rojo-urban:hover {
-    background-color: transparent;
-    color: var(--rojo-corporativo);
-}
-
-.btn-add-cart {
-    display: inline-block;
-    background-color: var(--rojo-corporativo);
-    color: #ffffff;
-    padding: 15px 40px;
-    font-family: var(--fuente-texto);
-    font-weight: 900;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 2px solid var(--rojo-corporativo);
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-}
-
-.btn-add-cart:hover {
-    background-color: transparent;
-    color: var(--rojo-corporativo);
+/* Estilo específico para que "No Limits" en Historia suba más */
+main section[style*="text-align: center"] {
+    padding-top: 40px !important; /* Subimos la sección */
+    padding-bottom: 80px !important;
 }
 
 /* -------------------------------------------------------------------------
-   8. GRID DE PRODUCTOS
-   ------------------------------------------------------------------------- */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 40px 20px 100px;
-}
-
-.product-card-urban {
-    background: var(--negro-tarjeta);
-    border: 1px solid var(--gris-borde);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card-urban:hover {
-    transform: translateY(-5px);
-    border-color: var(--rojo-corporativo);
-    box-shadow: 0 0 15px var(--rojo-corporativo);
-}
-
-.product-image {
-    position: relative;
-    margin: 0;
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: 340px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-.product-card-urban:hover .product-image img {
-    transform: scale(1.04);
-}
-
-.drop-label {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    background: var(--rojo-corporativo);
-    color: #ffffff;
-    font-size: 0.62rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-    padding: 4px 10px;
-    text-transform: uppercase;
-}
-
-.product-card-urban .info-card-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-}
-
-.product-name-urban {
-    font-size: 0.92rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--blanco-puro);
-    margin: 0;
-}
-
-.price-red-urban {
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: var(--rojo-corporativo);
-    margin: 0;
-}
-
-/* -------------------------------------------------------------------------
-   9. PAGINAS INTERIORES (BAJADO PARA "NUESTRO ADN" Y "TIENDA")
-   ------------------------------------------------------------------------- */
-.shop-header {
-    padding: 350px 20px 60px; 
-    text-align: center;
-}
-
-.page-info-container {
-    padding: 350px 20px 50px; 
-    text-align: center;
-}
-
-.section-title {
-    font-size: clamp(2rem, 6vw, 4rem);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: var(--blanco-puro);
-    margin: 0 0 15px;
-}
-
-/* TÍTULO FINAL HISTORIA - BLANCO, GRANDE Y CON GLOW ROJO */
-.section-title-inside {
-    font-size: clamp(2.5rem, 8vw, 5rem) !important;
-    color: var(--blanco-puro) !important;
-    text-shadow: 0 0 20px var(--rojo-corporativo), 0 0 40px var(--rojo-corporativo);
-    margin-bottom: 30px !important;
-}
-
-/* AJUSTE PARA SUBIR EL BLOQUE FINAL */
-main section[style*="padding: 120px 20px"] {
-    padding: 70px 20px !important;
-}
-
-.info-text,
-.info-text-center {
-    font-size: 1rem;
-    color: var(--texto-secundario);
-    text-align: center;
-    margin: 0 auto;
-    max-width: 600px;
-    line-height: 1.6;
-}
-
-/* -------------------------------------------------------------------------
-   10. FOOTER
+   8. FOOTER Y OTROS
    ------------------------------------------------------------------------- */
 .main-footer {
     background: var(--negro-footer);
@@ -603,258 +294,51 @@ main section[style*="padding: 120px 20px"] {
     gap: 50px;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding-bottom: 50px;
-}
-
-.footer-brand {
-    flex: 1;
-    min-width: 200px;
 }
 
 .logo-footer {
     font-family: var(--fuente-logo);
     font-size: 1.8rem;
     color: var(--rojo-corporativo);
-    margin: 0 0 10px;
-    letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
-.footer-brand .slogan {
-    font-weight: 900;
-    font-size: 0.82rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--blanco-puro);
-    margin: 0 0 5px;
-}
-
-.footer-brand .est-date {
-    font-size: 0.78rem;
-    color: var(--texto-secundario);
-    margin: 0 0 22px;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-socials a {
-    color: var(--texto-secundario);
-    font-size: 1.3rem;
-    transition: color 0.3s;
-}
-
-.footer-socials a:hover {
-    color: var(--rojo-corporativo);
-}
-
-.footer-nav,
-.footer-support {
-    flex: 1;
-    min-width: 150px;
-}
-
-.footer-title {
-    font-size: 0.75rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--rojo-corporativo);
-    margin: 0 0 20px;
-}
-
-.footer-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.footer-list li a {
-    font-size: 0.85rem;
-    color: var(--texto-secundario);
-    transition: color 0.3s;
-}
-
-.footer-list li a:hover,
-.footer-list li a.highlight-link {
-    color: var(--rojo-corporativo);
-}
-
-.footer-legal {
-    border-top: 1px solid var(--gris-borde);
-    padding-top: 25px;
-    text-align: center;
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-.footer-legal p {
-    font-size: 0.76rem;
-    color: var(--texto-secundario);
-    letter-spacing: 0.5px;
-    margin: 0;
-}
-
-/* -------------------------------------------------------------------------
-   11. RESPONSIVO
-   ------------------------------------------------------------------------- */
-@media (max-width: 950px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .logo {
-        font-size: 2rem;
-        margin-bottom: 0;
-        padding-right: 40px;
-    }
-
-    .nav-container {
-        padding: 12px 20px 0;
-        align-items: center;
-    }
-
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        width: 100vw;
-        background: var(--negro-menu);
-        border-top: 1px solid rgba(255, 0, 0, 0.3);
-        padding: 8px 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        justify-content: flex-start;
-    }
-
-    .nav-list.active {
-        display: flex;
-    }
-
-    .nav-list li a {
-        display: block;
-        padding: 14px 25px;
-        font-size: 0.85rem;
-        opacity: 1;
-    }
-
-    .dropdown-menu {
-        position: static;
-        transform: none;
-        border: none;
-        border-left: 2px solid var(--rojo-corporativo);
-        margin-left: 30px;
-        background: transparent;
-        padding: 0;
-        min-width: unset;
-    }
-
-    .categorias-grid-3 {
-        grid-template-columns: 1fr;
-    }
-
-    .categoria-card-new > img {
-        height: 280px;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        gap: 35px;
-    }
-
-    .logo-footer {
-        font-size: 1.5rem;
-    }
-
-    .carousel-track img {
-        height: 140px;
-        width: 140px;
-    }
-}
-
-@media (max-width: 600px) {
-    .nav-container {
-        padding: 0 15px;
-    }
-
-    .logo {
-        font-size: 1.3rem;
-    }
-
-    .titulo-categorias-red {
-        margin: 80px 0 35px;
-        font-size: 2rem;
-    }
-
-    .shop-header,
-    .page-info-container {
-        padding-top: 200px; 
-    }
-}
-
-/* -------------------------------------------------------------------------
-   12. BOTONES DE USUARIO (POSICIÓN SUPERIOR DERECHA)
-   ------------------------------------------------------------------------- */
+/* BOTONES DE USUARIO SUPERIORES */
 .nav-user-actions-top {
     position: absolute;
     right: 40px;
     top: 15px;
     display: flex;
-    align-items: center;
     gap: 15px;
     z-index: 10002;
 }
 
-/* Botón Iniciar Sesión - Estilo Outlined (Elegante) */
 .btn-login-text {
-    font-size: 0.65rem !important;
+    font-size: 0.65rem;
     font-weight: 800;
-    letter-spacing: 1.5px;
-    color: var(--blanco-puro) !important;
-    border: 1px solid rgba(255, 0, 0, 0.5); /* Borde rojo suave */
-    padding: 8px 15px !important;
-    transition: all 0.3s ease;
+    color: var(--blanco-puro);
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    padding: 8px 15px;
     text-transform: uppercase;
 }
 
-.btn-login-text:hover {
-    background: rgba(255, 0, 0, 0.1);
-    border-color: var(--rojo-corporativo);
-    color: var(--rojo-corporativo) !important;
-}
-
-/* Botón Registro - Estilo Sólido (Llamativo) */
 .btn-register-glow {
     background-color: var(--rojo-corporativo);
-    color: #fff !important;
-    padding: 9px 18px !important;
-    border-radius: 2px;
-    font-size: 0.65rem !important;
-    font-weight: 900 !important;
-    letter-spacing: 1.5px;
+    color: #fff;
+    padding: 9px 18px;
+    font-size: 0.65rem;
+    font-weight: 900;
     text-transform: uppercase;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-    transition: all 0.3s ease !important;
 }
 
 .btn-register-glow:hover {
-    transform: translateY(-2px);
     box-shadow: 0 0 20px var(--rojo-corporativo);
-    filter: brightness(1.1);
+    transform: translateY(-2px);
 }
 
-/* Esconder en móviles para que no rompa el diseño */
+/* RESPONSIVO */
 @media (max-width: 950px) {
-    .nav-user-actions-top {
-        display: none;
-    }
+    .nav-user-actions-top { display: none; }
+    .categorias-grid-3 { grid-template-columns: 1fr; }
 }
