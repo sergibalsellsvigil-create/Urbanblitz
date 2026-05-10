@@ -1,98 +1,171 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (CORRECCIÓN FINAL - MENÚ UNA SOLA LÍNEA)
+   URBANBLITZ - STYLE.CSS (COMPLETO Y CORREGIDO)
    ========================================================================== */
 
 /* 1. RESET Y CONFIGURACIÓN BASE */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body { 
     margin: 0; 
-    padding: 0;
-    font-family: var(--fuente-texto), sans-serif; 
-    background-color: var(--negro-fondo) !important;
+    font-family: var(--fuente-texto); 
+    background-color: var(--negro-fondo);
     color: var(--blanco-puro); 
     overflow-x: hidden; 
 }
 
-/* 2. HEADER (MENÚ ULTRA-SLIM IDÉNTICO A LA IMAGEN) */
+a { text-decoration: none; transition: 0.3s ease; color: inherit; }
+
+img { display: block; max-width: 100%; }
+
+/* ==========================================================================
+   2. HEADER Y NAVEGACIÓN
+   ========================================================================== */
+
 .main-header { 
-    background-color: var(--negro-menu) !important;
-    height: 60px !important; /* Forzamos una altura pequeña fija */
-    border-bottom: 1px solid var(--rojo-corporativo) !important;
-    z-index: 10000 !important; 
-    position: fixed !important; 
+    background-color: var(--negro-menu);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+    z-index: 10000; 
+    position: fixed; 
     top: 0;
-    left: 0;
     width: 100%;
-    display: flex;
-    align-items: center;
 }
 
 .nav-container {
-    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    display: flex !important;
-    flex-direction: row !important; /* Fuerza horizontal */
-    justify-content: space-between !important; 
-    align-items: center !important;
-    padding: 0 40px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0 50px;
 }
 
 .logo { 
-    font-family: var(--fuente-logo), cursive !important; 
-    font-size: 1.5rem !important; 
-    color: var(--rojo-corporativo) !important; 
+    font-family: var(--fuente-logo); 
+    font-size: 2rem;
+    color: var(--rojo-corporativo); 
     text-transform: uppercase; 
-    letter-spacing: 3px !important; 
-    margin: 0 !important;
-    line-height: 1 !important;
+    letter-spacing: 4px;
+    margin: 0;
+    font-weight: 900;
+    line-height: 1;
 }
 
 .nav-list { 
-    display: flex !important; 
-    flex-direction: row !important;
-    gap: 25px !important; 
-    list-style: none !important; 
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.nav-list li {
-    margin: 0 !important;
-    padding: 0 !important;
+    display: flex; 
+    gap: 30px;
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    align-items: center;
 }
 
 .nav-list li a { 
-    font-weight: 900 !important; 
+    font-weight: 600; 
     text-transform: uppercase; 
-    font-size: 0.75rem !important; 
-    color: var(--blanco-puro) !important;
+    font-size: 0.78rem;
+    color: var(--blanco-puro);
+    letter-spacing: 1.5px;
+    opacity: 0.85;
+    transition: color 0.3s, opacity 0.3s;
+    white-space: nowrap;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active { 
+    color: var(--rojo-corporativo); 
+    opacity: 1;
+}
+
+/* Carrito */
+.nav-list li a[href="carrito.html"] {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ==========================================================================
+   3. DROPDOWN
+   ========================================================================== */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--negro-menu);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-top: 2px solid var(--rojo-corporativo);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 180px;
+    z-index: 9999;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 1px;
-    white-space: nowrap; /* Evita que el texto salte de línea */
+    text-transform: uppercase;
+    color: var(--blanco-puro);
+    opacity: 0.85;
+    transition: color 0.2s, background 0.2s;
 }
 
-.nav-list li a:hover { 
-    color: var(--rojo-corporativo) !important; 
+.dropdown-menu li a:hover {
+    color: var(--rojo-corporativo);
+    background: rgba(255, 0, 0, 0.07);
+    opacity: 1;
 }
 
-/* OCULTAR MENÚ HAMBURGUESA EN PC PARA QUE NO MOLESTE */
-.menu-toggle { display: none !important; }
+/* Botón hamburguesa - oculto en PC */
+.menu-toggle { 
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--blanco-puro);
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10001;
+}
 
-/* 3. HERO (SE AJUSTA EL MARGEN PARA NO QUEDAR BAJO EL MENÚ) */
+/* ==========================================================================
+   4. HERO
+   ========================================================================== */
+
 .hero {
     position: relative;
-    height: 100vh !important;
+    height: 100vh;
     width: 100%;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    margin-top: 0; /* Al ser fixed, el hero empieza desde arriba */
+    background-color: #000;
 }
 
 .hero-bg-video {
     position: absolute;
-    top: 0; left: 0; width: 100% !important; height: 100% !important;
-    object-fit: cover !important;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     z-index: 1;
     filter: brightness(0.4); 
 }
@@ -100,48 +173,526 @@ body {
 .hero-content { 
     position: relative; 
     z-index: 2; 
-    text-align: center;
+    text-align: center; 
+    width: 100%;
+    padding: 0 20px;
 }
 
 .slogan-hero {
-    font-size: clamp(2.5rem, 7vw, 5rem) !important;
-    color: #ffffff !important;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    color: #ffffff;
     text-transform: uppercase;
     font-weight: 900;
-    text-shadow: 0 0 20px var(--rojo-corporativo) !important;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px var(--rojo-corporativo), 0 0 40px var(--rojo-corporativo);
+    display: block;
 }
 
-/* 4. SECCIONES SIGUIENTES */
+.hero-content p {
+    font-size: 1rem;
+    color: var(--blanco-puro);
+    opacity: 0.85;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+.btn-add-cart-hero {
+    display: inline-block;
+    background-color: var(--rojo-corporativo);
+    color: #ffffff;
+    padding: 16px 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 2px solid var(--rojo-corporativo);
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-add-cart-hero:hover {
+    background-color: transparent;
+    color: var(--rojo-corporativo);
+}
+
+/* ==========================================================================
+   5. SECCIÓN CATEGORÍAS / DESCUBRE EL CLAN
+   ========================================================================== */
+
 .titulo-categorias-red {
     color: var(--rojo-corporativo);
-    font-size: 2.5rem;
+    font-size: clamp(2.2rem, 7vw, 4rem);
     font-weight: 900;
     text-align: center;
-    margin: 100px 0 40px;
+    margin: 120px 0 40px; 
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 .categorias-grid-3 {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: var(--max-width);
     margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+/* Tarjeta de categoría */
+.categoria-card-new {
+    background: var(--negro-tarjeta);
+    border: 1px solid var(--gris-borde);
+    transition: transform 0.3s, border-color 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.categoria-card-new:hover {
+    transform: translateY(-4px);
+    border-color: var(--rojo-corporativo);
 }
 
 .categoria-card-new img {
-    width: 100% !important;
-    height: 450px !important; 
+    width: 100%;
+    height: 450px;
     object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: filter 0.3s;
 }
 
-/* 5. FOOTER */
+.categoria-card-new:hover img {
+    filter: brightness(1);
+}
+
+/* Contenido de texto dentro de la tarjeta */
+.categoria-card-new .card-body {
+    padding: 25px 20px 30px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.categoria-card-new h3,
+.categoria-card-new .card-title {
+    font-family: var(--fuente-texto);
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blanco-puro);
+    margin: 0;
+}
+
+.categoria-card-new p,
+.categoria-card-new .card-desc {
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.categoria-card-new a,
+.categoria-card-new .btn-card {
+    display: inline-block;
+    background-color: var(--rojo-corporativo);
+    color: #ffffff;
+    padding: 12px 28px;
+    font-weight: 900;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid var(--rojo-corporativo);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    margin-top: 5px;
+}
+
+.categoria-card-new a:hover,
+.categoria-card-new .btn-card:hover {
+    background-color: transparent;
+    color: var(--rojo-corporativo);
+}
+
+/* ==========================================================================
+   6. SECCIÓN TIENDA / PRODUCT GRID
+   ========================================================================== */
+
+.shop-header {
+    padding-top: 140px;
+    padding-bottom: 60px;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85));
+}
+
+.section-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--blanco-puro);
+    margin: 0 0 15px;
+}
+
+.info-text, .info-text-center {
+    font-size: 1rem;
+    color: var(--texto-secundario);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 40px 20px 100px;
+}
+
+/* Tarjeta de producto */
+.product-card-urban {
+    background: var(--negro-tarjeta);
+    border: 1px solid var(--gris-borde);
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card-urban:hover {
+    transform: translateY(-4px);
+    border-color: var(--rojo-corporativo);
+}
+
+.product-image {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+
+.product-card-urban:hover .product-image img {
+    transform: scale(1.04);
+}
+
+.drop-label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--rojo-corporativo);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    text-transform: uppercase;
+}
+
+.info-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.product-name-urban {
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--blanco-puro);
+    margin: 0;
+}
+
+.price-red-urban {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--rojo-corporativo);
+    margin: 0;
+}
+
+.btn-rojo-urban {
+    display: inline-block;
+    background-color: var(--rojo-corporativo);
+    color: #ffffff;
+    padding: 12px 20px;
+    font-weight: 900;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid var(--rojo-corporativo);
+    cursor: pointer;
+    font-family: var(--fuente-texto);
+    transition: background 0.3s, color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.btn-rojo-urban:hover {
+    background-color: transparent;
+    color: var(--rojo-corporativo);
+}
+
+/* Botón genérico rojo */
+.btn-add-cart {
+    display: inline-block;
+    background-color: var(--rojo-corporativo);
+    color: #ffffff;
+    padding: 15px 40px;
+    font-weight: 900;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid var(--rojo-corporativo);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+    font-family: var(--fuente-texto);
+}
+
+.btn-add-cart:hover {
+    background-color: transparent;
+    color: var(--rojo-corporativo);
+}
+
+/* ==========================================================================
+   7. PÁGINA INFO / CONTENIDO INTERIOR
+   ========================================================================== */
+
+.page-info-container {
+    padding-top: 140px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.product-card {
+    background: var(--negro-tarjeta);
+    border: 1px solid var(--gris-borde);
+    transition: border-color 0.3s;
+}
+
+.product-card:hover {
+    border-color: var(--rojo-corporativo);
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+
 .main-footer { 
     background: var(--negro-footer);
-    border-top: 1px solid var(--rojo-corporativo); 
-    padding: 40px 20px; 
+    border-top: 2px solid var(--rojo-corporativo); 
+    padding: 60px 20px 30px;
 }
 
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.footer-brand {
+    flex: 1;
+    min-width: 200px;
+}
+
+.logo-footer {
+    font-family: var(--fuente-logo);
+    font-size: 1.8rem;
+    color: var(--rojo-corporativo);
+    margin: 0 0 10px;
+    letter-spacing: 3px;
+}
+
+.footer-brand .slogan {
+    font-weight: 900;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blanco-puro);
+    margin: 0 0 5px;
+}
+
+.footer-brand .est-date {
+    font-size: 0.78rem;
+    color: var(--texto-secundario);
+    margin: 0 0 20px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: var(--texto-secundario);
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: var(--rojo-corporativo);
+}
+
+.footer-nav,
+.footer-support {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-title {
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--rojo-corporativo);
+    margin: 0 0 20px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-list li a {
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+    transition: color 0.3s;
+}
+
+.footer-list li a:hover,
+.footer-list li a.highlight-link {
+    color: var(--blanco-puro);
+}
+
+.footer-legal {
+    border-top: 1px solid var(--gris-borde);
+    padding-top: 25px;
+    text-align: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer-legal p {
+    font-size: 0.78rem;
+    color: var(--texto-secundario);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE — MÓVIL
+   ========================================================================== */
+
 @media (max-width: 950px) {
-    .nav-list { display: none !important; }
-    .categorias-grid-3 { grid-template-columns: 1fr !important; }
+
+    /* MENÚ HAMBURGUESA */
+    .menu-toggle { 
+        display: block; 
+        order: -1;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        margin: 0 auto;
+    }
+
+    .nav-container {
+        padding: 0 20px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .nav-list { 
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        background: var(--negro-menu);
+        border-top: 1px solid rgba(255,0,0,0.3);
+        padding: 10px 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li a {
+        display: block;
+        padding: 14px 25px;
+        font-size: 0.85rem;
+        opacity: 1;
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        border: none;
+        border-left: 2px solid var(--rojo-corporativo);
+        margin-left: 25px;
+        background: transparent;
+        padding: 0;
+    }
+
+    /* GRID CATEGORÍAS */
+    .categorias-grid-3 { 
+        grid-template-columns: 1fr;
+    }
+
+    .categoria-card-new img {
+        height: 300px;
+    }
+
+    /* GRID PRODUCTOS */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .titulo-categorias-red {
+        margin: 100px 0 30px;
+    }
 }
