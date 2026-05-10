@@ -1,45 +1,26 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (DEFINITIVO Y 100% FUNCIONAL)
+    URBANBLITZ - STYLE.CSS (PROYECTO FINALIZADO)
    ========================================================================== */
 
-/* 1. RESET CRÍTICO (Evita el texto azul y subraya de HTML antiguo) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --rojo-corporativo: #ff0000;
-    --negro-fondo: #050505;
-    --negro-menu: #000000;
-    --blanco-puro: #ffffff;
-    --max-width: 1200px;
-}
-
+/* 1. RESET Y CONFIGURACIÓN BASE */
 body { 
-    font-family: 'Inter', sans-serif; 
+    margin: 0; 
+    font-family: var(--fuente-texto); 
     background-color: var(--negro-fondo) !important;
     color: var(--blanco-puro); 
     overflow-x: hidden; 
 }
 
-/* Forzamos que NINGÚN enlace se vea azul */
-a { 
-    text-decoration: none !important; 
-    color: inherit !important; 
-    transition: 0.3s; 
-}
+a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 
-/* 2. HEADER: LOGO Y MENÚ (CENTRADOS) */
+/* 2. HEADER (Logo y Menú) */
 .main-header { 
     background-color: var(--negro-menu);
-    padding: 25px 0; 
+    padding: 20px 0; 
     border-bottom: 2px solid var(--rojo-corporativo);
-    width: 100%;
+    z-index: 10000; 
     position: sticky;
     top: 0;
-    z-index: 9999;
 }
 
 .nav-container {
@@ -48,105 +29,195 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    position: relative;
+}
+
+/* OCULTAR MENÚ HAMBURGUESA EN PC */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--blanco-puro);
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .logo { 
-    font-size: clamp(2.5rem, 6vw, 3.8rem); 
-    color: var(--rojo-corporativo) !important; 
+    font-family: var(--fuente-logo); 
+    font-size: clamp(2.2rem, 8vw, 4rem); 
+    color: var(--rojo-corporativo); 
     text-transform: uppercase; 
-    letter-spacing: 12px;
-    font-weight: 900;
-    margin-bottom: 15px;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
 }
 
 .nav-list { 
     display: flex; 
-    gap: 30px; 
+    gap: 25px; 
     list-style: none; 
+    padding: 0;
 }
 
 .nav-list li a { 
     font-weight: 600; 
     text-transform: uppercase; 
-    font-size: 0.9rem;
-    color: var(--blanco-puro) !important;
+    font-size: 0.85rem;
+    color: var(--blanco-puro);
 }
 
 .nav-list li a:hover { 
-    color: var(--rojo-corporativo) !important; 
+    color: var(--rojo-corporativo); 
+    text-shadow: 0 0 10px var(--rojo-corporativo); 
 }
 
-/* Ocultar hamburguesa en PC */
-.menu-toggle { display: none; }
-
-/* 3. CARRUSEL (MOVIMIENTO INFINITO CORREGIDO) */
-.new-drops-carousel { 
-    width: 100%;
-    overflow: hidden; /* Corta el exceso de fotos */
-    background: #000; 
-    padding: 60px 0;
+/* 3. HERO (Eslogan con Brillo) */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.carousel-track { 
-    display: flex; 
-    width: max-content; /* Deja que crezca según las fotos */
-    animation: scroll-infinito 25s linear infinite !important; /* ANIMACIÓN ACTIVA */
+.hero-bg-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 1;
+    filter: brightness(0.4); 
 }
 
-.carousel-track img {
-    width: 300px; 
-    height: 400px;
-    object-fit: cover; 
-    margin: 0 15px; 
-    border: 1px solid #333;
+.hero-content { position: relative; z-index: 2; text-align: center; }
+
+.slogan-hero {
+    font-size: clamp(2.8rem, 7vw, 5.5rem) !important;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: var(--glow-slogan);
+    display: block;
 }
 
-/* REGLA DEL MOVIMIENTO */
-@keyframes scroll-infinito {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Mueve la mitad para que el bucle sea perfecto */
+.btn-add-cart-hero {
+    display: inline-block;
+    background-color: var(--rojo-corporativo) !important;
+    color: #ffffff !important;
+    padding: 15px 35px;
+    font-weight: 900;
+    margin-top: 20px;
+    border: 2px solid var(--rojo-corporativo);
+    transition: 0.3s;
 }
 
-/* 4. SECCIÓN 3 CAJETILLAS (DESCUBRE EL CLAN) */
+.btn-add-cart-hero:hover {
+    background-color: white !important;
+    color: var(--rojo-corporativo) !important;
+    border-color: white;
+}
+
+/* 4. SECCIÓN DESCUBRE EL CLAN (LAS 3 CAJETILLAS CORREGIDAS) */
+.titulo-categorias-red {
+    color: var(--rojo-corporativo);
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    font-weight: 900;
+    text-align: center;
+    margin: 80px 0 40px;
+    text-transform: uppercase;
+}
+
+/* Forzamos 3 columnas fijas en PC */
 .categorias-grid-3 {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important; 
     gap: 30px;
     max-width: var(--max-width);
-    margin: 80px auto;
+    margin: 0 auto 100px;
     padding: 0 20px;
 }
 
 .categoria-card-new {
-    background: #0d0d0d;
-    border: 1px solid #222;
-    overflow: hidden;
+    background: var(--negro-tarjeta);
+    border: 1px solid var(--gris-borde);
     transition: 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.categoria-card-new:hover { border-color: var(--rojo-corporativo); }
+.categoria-card-new:hover { 
+    border-color: var(--rojo-corporativo); 
+    transform: translateY(-5px);
+}
 
+/* Tamaño de cajetilla para la imagen */
 .categoria-card-new img {
-    width: 100%;
-    height: 450px;
+    width: 100% !important;
+    height: 450px !important; 
     object-fit: cover;
+    display: block;
 }
 
 .info-card-content { padding: 30px; text-align: center; }
 
 .btn-rojo-urban {
     display: inline-block;
-    background-color: var(--rojo-corporativo);
+    background-color: var(--rojo-corporativo) !important;
     color: #fff !important;
     padding: 12px 25px;
     font-weight: 900;
     text-transform: uppercase;
+    border: 2px solid var(--rojo-corporativo);
     margin-top: 15px;
+    transition: 0.3s;
 }
 
-/* 5. RESPONSIVO */
+.btn-rojo-urban:hover { 
+    background-color: white !important; 
+    color: var(--rojo-corporativo) !important; 
+}
+
+/* 5. FOOTER */
+.main-footer { 
+    background: var(--negro-footer);
+    border-top: 2px solid var(--rojo-corporativo); 
+    padding: 60px 20px; 
+}
+
+.footer-container { 
+    max-width: var(--max-width); 
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 40px;
+}
+
+.footer-list { list-style: none; padding: 0; }
+.footer-list li a { 
+    color: var(--texto-secundario) !important; 
+    font-size: 0.9rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.footer-list li a:hover { 
+    color: var(--rojo-corporativo) !important; 
+    padding-left: 5px; 
+}
+
+/* 6. RESPONSIVO */
 @media (max-width: 950px) {
+    .menu-toggle { 
+        display: block; 
+        position: absolute; 
+        left: 20px; 
+        top: 50%; 
+        transform: translateY(-50%); 
+    }
     .nav-list { display: none; }
-    .categorias-grid-3 { grid-template-columns: 1fr !important; }
+    .categorias-grid-3 { 
+        grid-template-columns: 1fr !important; /* En móvil sí se pone una debajo de otra */
+    }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
 }
