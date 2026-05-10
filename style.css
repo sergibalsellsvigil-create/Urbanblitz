@@ -201,16 +201,16 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   5. AJUSTES EXCLUSIVOS PARA HISTORIA (TEXTO PEQUEÑO, SEPARACIÓN Y BOTÓN)
+   5. AJUSTES EXCLUSIVOS PARA HISTORIA (BOTÓN Y TEXTO AJUSTADOS)
    ------------------------------------------------------------------------- */
 .slogan-historia {
-    font-size: 2.2rem; /* Tamaño equilibrado, no tan grande */
+    font-size: 2.2rem; 
     color: #ffffff !important;
     text-transform: uppercase;
     font-weight: 900;
     line-height: 1.1;
     margin-top: 0 !important;
-    margin-bottom: 45px; /* Separación pedida entre texto y botón */
+    margin-bottom: 45px; /* Separación entre texto y botón */
     text-shadow: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
     display: block;
     text-align: center;
@@ -220,15 +220,15 @@ img {
     display: inline-block;
     background-color: var(--rojo-corporativo);
     color: #ffffff;
-    padding: 22px 60px; /* Cajetilla grande */
+    padding: 14px 35px; /* Botón más pequeño y estilizado */
     font-weight: 900;
-    font-size: 1.1rem;
+    font-size: 0.9rem; /* Texto más pequeño acorde al botón */
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-decoration: none;
     border: 2px solid var(--rojo-corporativo);
     transition: 0.3s;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
 }
 
 .btn-add-cart-hero:hover {
@@ -288,7 +288,7 @@ img {
    7. SECCIÓN FINAL (SUBIR BLOQUE)
    ------------------------------------------------------------------------- */
 main section[style*="text-align: center"] {
-    padding-top: 10px !important; /* Casi sin margen arriba */
+    padding-top: 10px !important; 
     padding-bottom: 80px !important;
 }
 
@@ -353,5 +353,5 @@ main section[style*="text-align: center"] {
 @media (max-width: 950px) {
     .nav-user-actions-top { display: none; }
     .categorias-grid-3 { grid-template-columns: 1fr; }
-    .btn-add-cart-hero { padding: 18px 40px; font-size: 0.9rem; }
+    .btn-add-cart-hero { padding: 12px 25px; font-size: 0.8rem; }
 }
