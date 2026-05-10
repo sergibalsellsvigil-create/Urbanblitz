@@ -1,5 +1,5 @@
 /* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (CORREGIDO ESPACIADO INTERIOR)
+   URBANBLITZ - STYLE.CSS DEFINITIVO (CORREGIDO LOGO Y ESPACIADO)
    ========================================================================== */
 
 /* -------------------------------------------------------------------------
@@ -64,11 +64,11 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 20px; /* Aumentado ligeramente para mejor equilibrio */
 }
 
 .logo-icon {
-    height: 3rem;
+    height: 4.5rem; /* Aumentado de 3rem a 4.5rem para igualar el texto */
     width: auto;
     filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.7));
 }
@@ -521,7 +521,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   9. PAGINAS INTERIORES (MODIFICADO: Subida de título y orden de textos)
+   9. PAGINAS INTERIORES
    ------------------------------------------------------------------------- */
 .shop-header {
     padding: 180px 20px 40px;
