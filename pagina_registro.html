@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Únete al Clan | Urbanblitz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para la página de registro */
+        .registration-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 150px 20px 80px; /* Espacio para el header fijo */
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/herooso.png'); /* Fondo con overlay oscuro */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .form-card {
+            background: var(--negro-tarjeta);
+            border: 1px solid var(--gris-borde);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--rojo-corporativo);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--blanco-puro);
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: var(--texto-secundario);
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--rojo-corporativo);
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background: #111;
+            border: 1px solid var(--gris-borde);
+            color: white;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--rojo-corporativo);
+        }
+
+        .btn-submit-clan {
+            width: 100%;
+            background: var(--rojo-corporativo);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-submit-clan:hover {
+            box-shadow: 0 0 20px var(--rojo-corporativo);
+            transform: translateY(-2px);
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+        }
+
+        .form-footer a {
+            color: var(--blanco-puro);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <h1 class="logo">
+                <img src="img/header-logo.png" alt="" class="logo-icon">
+                URBANBLITZ
+            </h1>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Quiénes somos</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li class="nav-user-actions">
+                    <a href="pagina_sesion.html" class="btn-login-text">INICIAR SESIÓN</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="registration-container">
+        <section class="form-card">
+            <div class="form-header">
+                <h2>ÚNETE AL CLAN</h2>
+                <p>Forma parte de la élite de Urbanblitz</p>
+            </div>
+
+            <form action="#">
+                <div class="form-group">
+                    <label for="usuario">Nombre de Usuario / Alias</label>
+                    <input type="text" id="usuario" placeholder="Ej: Blitz_Warrior" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="********" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Contraseña</label>
+                    <input type="password" id="confirm-password" placeholder="********" required>
+                </div>
+
+                <button type="submit" class="btn-submit-clan">RECLUTARME</button>
+            </form>
+
+            <div class="form-footer">
+                ¿Ya tienes cuenta? <a href="pagina_sesion.html">Inicia sesión aquí</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <section class="footer-legal">
+            <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
+        </section>
+    </footer>
+
+</body>
+</html>
