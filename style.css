@@ -1,5 +1,5 @@
 /* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (ICONO CORREGIDO)
+   URBANBLITZ - STYLE.CSS DEFINITIVO (COLORES EN HEXADECIMAL)
    ========================================================================== */
 
 /* -------------------------------------------------------------------------
@@ -33,8 +33,8 @@ img {
    ------------------------------------------------------------------------- */
 .main-header {
     background-color: var(--negro-menu);
-    padding: 20px 0 0; /* Un poco menos de padding superior para compensar el tamaño del logo */
-    border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+    padding: 20px 0 0;
+    border-bottom: 2px solid #FF0000; /* Rojo puro en Hex */
     position: fixed;
     top: 0;
     width: 100%;
@@ -53,7 +53,7 @@ img {
 
 .logo {
     font-family: var(--fuente-logo);
-    font-size: 3rem; /* Tamaño de texto equilibrado */
+    font-size: 3rem;
     color: var(--rojo-corporativo);
     text-transform: uppercase;
     letter-spacing: 6px;
@@ -68,9 +68,9 @@ img {
 }
 
 .logo-icon {
-    height: 140px !important; /* Forzamos el tamaño del rayo en píxeles para que se vea grande */
+    height: 90px !important; /* Tamaño del rayo */
     width: auto;
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+    filter: drop-shadow(0 0 10px #FF0000); /* Sombra en Hex */
     display: block;
     object-fit: contain;
 }
@@ -82,7 +82,7 @@ img {
     padding: 18px 0;
     margin: 0;
     align-items: center;
-    border-top: 1px solid rgba(255, 0, 0, 0.2);
+    border-top: 1px solid #330000; /* Rojo muy oscuro para separación */
     width: 100%;
     justify-content: center;
 }
@@ -119,7 +119,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   3. DROPDOWN (INTACTO)
+   3. DROPDOWN
    ------------------------------------------------------------------------- */
 .dropdown {
     position: relative;
@@ -132,7 +132,7 @@ img {
     left: 50%;
     transform: translateX(-50%);
     background: var(--negro-menu);
-    border: 1px solid rgba(255, 0, 0, 0.25);
+    border: 1px solid #440000;
     border-top: 2px solid var(--rojo-corporativo);
     list-style: none;
     padding: 8px 0;
@@ -169,12 +169,12 @@ img {
 
 .dropdown-menu li a:hover {
     color: var(--rojo-corporativo);
-    background: rgba(255, 0, 0, 0.06);
+    background: #1A0000; /* Fondo sutil al pasar el ratón */
     opacity: 1;
 }
 
 /* -------------------------------------------------------------------------
-   4. HERO (INTACTO)
+   4. HERO
    ------------------------------------------------------------------------- */
 .hero {
     position: relative;
@@ -184,7 +184,7 @@ img {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #000;
+    background-color: #000000;
 }
 
 .hero-bg-video {
@@ -208,12 +208,12 @@ img {
 
 .slogan-hero {
     font-size: clamp(2.8rem, 7vw, 5.5rem);
-    color: #ffffff;
+    color: #FFFFFF;
     text-transform: uppercase;
     font-weight: 900;
     line-height: 1.1;
     margin: 0 0 20px;
-    text-shadow: 0 0 20px var(--rojo-corporativo), 0 0 40px var(--rojo-corporativo);
+    text-shadow: 0 0 20px #FF0000, 0 0 40px #FF0000;
     display: block;
 }
 
@@ -237,7 +237,7 @@ img {
 .btn-add-cart-hero {
     display: inline-block;
     background-color: var(--rojo-corporativo);
-    color: #ffffff;
+    color: #FFFFFF;
     padding: 16px 40px;
     font-weight: 900;
     font-size: 0.85rem;
@@ -255,7 +255,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   5. CARRUSEL "PROXIMAMENTE" (INTACTO)
+   5. CARRUSEL "PROXIMAMENTE"
    ------------------------------------------------------------------------- */
 .new-drops-carousel {
     overflow: hidden;
@@ -263,8 +263,6 @@ img {
     border-top: 1px solid var(--gris-borde);
     border-bottom: 1px solid var(--gris-borde);
     padding: 25px 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .carousel-header {
@@ -314,7 +312,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   6. SECCION "DESCUBRE EL CLAN" (INTACTO)
+   6. SECCION "DESCUBRE EL CLAN"
    ------------------------------------------------------------------------- */
 .categorias-home {
     padding-bottom: 80px;
@@ -395,12 +393,12 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   7. BOTONES (INTACTO)
+   7. BOTONES
    ------------------------------------------------------------------------- */
 .btn-rojo-urban {
     display: inline-block;
     background-color: var(--rojo-corporativo);
-    color: #ffffff;
+    color: #FFFFFF;
     padding: 13px 28px;
     font-family: var(--fuente-texto);
     font-weight: 900;
@@ -423,7 +421,7 @@ img {
 .btn-add-cart {
     display: inline-block;
     background-color: var(--rojo-corporativo);
-    color: #ffffff;
+    color: #FFFFFF;
     padding: 15px 40px;
     font-family: var(--fuente-texto);
     font-weight: 900;
@@ -442,7 +440,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   8. PRODUCT GRID (INTACTO)
+   8. PRODUCT GRID
    ------------------------------------------------------------------------- */
 .product-grid {
     display: grid;
@@ -490,7 +488,7 @@ img {
     top: 14px;
     left: 14px;
     background: var(--rojo-corporativo);
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 0.62rem;
     font-weight: 900;
     letter-spacing: 2px;
@@ -555,7 +553,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   10. FOOTER (INTACTO)
+   10. FOOTER
    ------------------------------------------------------------------------- */
 .main-footer {
     background: var(--negro-footer);
@@ -666,7 +664,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   11. RESPONSIVO (INTACTO)
+   11. RESPONSIVO
    ------------------------------------------------------------------------- */
 @media (max-width: 950px) {
     .menu-toggle {
@@ -690,7 +688,7 @@ img {
         gap: 0;
         width: 100vw;
         background: var(--negro-menu);
-        border-top: 1px solid rgba(255, 0, 0, 0.3);
+        border-top: 1px solid #550000;
         padding: 8px 0;
         position: absolute;
         top: 100%;
