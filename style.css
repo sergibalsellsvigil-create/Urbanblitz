@@ -175,7 +175,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   4. HERO (CAMBIO: AUMENTADO PADDING SUPERIOR)
+   4. HERO (BAJADO PARA EVITAR CHOQUE CON MENÚ)
    ------------------------------------------------------------------------- */
 .hero {
     position: relative;
@@ -186,7 +186,8 @@ img {
     justify-content: center;
     overflow: hidden;
     background-color: #000;
-    padding-top: 120px; /* Para que el eslogan baje respecto al menú */
+    /* Cambio: de 120px a 250px para bajar el texto en la Home */
+    padding-top: 250px; 
 }
 
 .hero-bg-video {
@@ -316,7 +317,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   6. SECCIÓN "DESCUBRE EL CLAN" (CAMBIO: AÑADIDO EFECTO GLOW)
+   6. SECCIÓN "DESCUBRE EL CLAN" / QUIÉNES SOMOS (CON GLOW)
    ------------------------------------------------------------------------- */
 .categorias-home {
     padding-bottom: 80px;
@@ -347,13 +348,15 @@ img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Transición para glow */
+    /* Cambio: Aseguramos la transición para el glow */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .categoria-card-new:hover {
     transform: translateY(-5px);
     border-color: var(--rojo-corporativo);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* EFECTO GLOW ROJO */
+    /* Cambio: Se añade el GLOW ROJO aquí */
+    box-shadow: 0 0 20px var(--rojo-corporativo); 
 }
 
 .categoria-card-new > img {
@@ -445,7 +448,7 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   8. GRID DE PRODUCTOS
+   8. GRID DE PRODUCTOS (Glow añadido aquí también para ser uniforme)
    ------------------------------------------------------------------------- */
 .product-grid {
     display: grid;
@@ -462,12 +465,14 @@ img {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card-urban:hover {
     transform: translateY(-5px);
     border-color: var(--rojo-corporativo);
+    /* Cambio: Se añade glow también a los productos */
+    box-shadow: 0 0 15px var(--rojo-corporativo);
 }
 
 .product-image {
@@ -526,15 +531,17 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   9. PAGINAS INTERIORES (CAMBIO: AUMENTADO PADDING SUPERIOR)
+   9. PAGINAS INTERIORES (BAJADO PARA "NUESTRO ADN" Y "TIENDA")
    ------------------------------------------------------------------------- */
 .shop-header {
-    padding: 280px 20px 60px; /* Bajado para que no choque el título de Tienda */
+    /* Cambio: Aumentado de 280px a 350px para bajar el título Tienda */
+    padding: 350px 20px 60px; 
     text-align: center;
 }
 
 .page-info-container {
-    padding: 280px 20px 50px; /* Bajado para que "NUESTRO ADN" no choque */
+    /* Cambio: Aumentado de 280px a 350px para bajar "NUESTRO ADN" */
+    padding: 350px 20px 50px; 
     text-align: center;
 }
 
@@ -766,6 +773,7 @@ img {
 
     .shop-header,
     .page-info-container {
-        padding-top: 160px; /* Ajuste para móvil */
+        /* Cambio: Ajustado para móvil */
+        padding-top: 200px; 
     }
 }
