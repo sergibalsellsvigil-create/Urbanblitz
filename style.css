@@ -777,56 +777,55 @@ img {
    ------------------------------------------------------------------------- */
 .nav-user-actions-top {
     position: absolute;
-    right: 40px;      /* Separación del borde derecho */
-    top: 15px;        /* Alineado a la altura del logo */
+    right: 40px;
+    top: 15px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    z-index: 10002;   /* Por encima de todo */
+    gap: 15px;
+    z-index: 10002;
 }
 
+/* Botón Iniciar Sesión - Estilo Outlined (Elegante) */
 .btn-login-text {
-    font-size: 0.7rem !important;
-    font-weight: 600;
-    opacity: 0.7;
-    letter-spacing: 1px;
+    font-size: 0.65rem !important;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     color: var(--blanco-puro) !important;
-    transition: 0.3s;
+    border: 1px solid rgba(255, 0, 0, 0.5); /* Borde rojo suave */
+    padding: 8px 15px !important;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
 }
 
 .btn-login-text:hover {
-    opacity: 1;
+    background: rgba(255, 0, 0, 0.1);
+    border-color: var(--rojo-corporativo);
     color: var(--rojo-corporativo) !important;
 }
 
+/* Botón Registro - Estilo Sólido (Llamativo) */
 .btn-register-glow {
     background-color: var(--rojo-corporativo);
     color: #fff !important;
-    padding: 10px 20px !important;
+    padding: 9px 18px !important;
     border-radius: 2px;
-    font-size: 0.7rem !important;
+    font-size: 0.65rem !important;
     font-weight: 900 !important;
-    letter-spacing: 1px;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
-    transition: all 0.3s !important;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    transition: all 0.3s ease !important;
 }
 
 .btn-register-glow:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
     box-shadow: 0 0 20px var(--rojo-corporativo);
+    filter: brightness(1.1);
 }
 
-/* Ajuste responsivo para que no se amontonen en tablets/móviles */
-@media (max-width: 1100px) {
-    .nav-user-actions-top {
-        right: 20px;
-        gap: 10px;
-    }
-}
-
+/* Esconder en móviles para que no rompa el diseño */
 @media (max-width: 950px) {
-    /* En móviles los ocultamos de la esquina para que no choquen con el menú hamburguesa */
     .nav-user-actions-top {
-        display: none; 
+        display: none;
     }
 }

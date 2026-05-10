@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso al Clan | Urbanblitz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para la página de login sin romper el style.css global */
+        .login-main {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+
+        .login-card {
+            background: var(--negro-tarjeta);
+            border: 1px solid var(--gris-borde);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--rojo-corporativo);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .login-header h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: var(--texto-secundario);
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            color: var(--rojo-corporativo);
+        }
+
+        .form-group input {
+            width: 100%;
+            background: #111;
+            border: 1px solid var(--gris-borde);
+            padding: 15px;
+            color: white;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--rojo-corporativo);
+            background: #151515;
+        }
+
+        .btn-login-submit {
+            width: 100%;
+            background: var(--rojo-corporativo);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-login-submit:hover {
+            background: white;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        .login-footer-links {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .login-footer-links a {
+            color: var(--blanco-puro);
+            text-decoration: underline;
+            opacity: 0.6;
+            margin: 0 10px;
+        }
+
+        .login-footer-links a:hover {
+            opacity: 1;
+            color: var(--rojo-corporativo);
+        }
+
+        .back-to-home {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-to-home">
+        <i class="fa-solid fa-arrow-left"></i> Volver
+    </a>
+
+    <main class="login-main">
+        <article class="login-card">
+            <header class="login-header">
+                <h2>Identificación</h2>
+                <p>Bienvenido de nuevo al Clan Urbanblitz.</p>
+            </header>
+
+            <form action="#">
+                <div class="form-group">
+                    <label for="email">Email del Usuario</label>
+                    <input type="email" id="email" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-login-submit">Entrar al Sistema</button>
+            </form>
+
+            <footer class="login-footer-links">
+                <a href="pagina_registro.html">Crear Cuenta</a>
+                <span>|</span>
+                <a href="#">¿Olvidaste la clave?</a>
+            </footer>
+        </article>
+    </main>
+
+</body>
+</html>
