@@ -1,5 +1,5 @@
 /* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (CORREGIDO LOGO Y ESPACIADO)
+   URBANBLITZ - STYLE.CSS DEFINITIVO (ICONO CORREGIDO)
    ========================================================================== */
 
 /* -------------------------------------------------------------------------
@@ -33,7 +33,7 @@ img {
    ------------------------------------------------------------------------- */
 .main-header {
     background-color: var(--negro-menu);
-    padding: 28px 0 0;
+    padding: 20px 0 0; /* Un poco menos de padding superior para compensar el tamaño del logo */
     border-bottom: 2px solid rgba(255, 0, 0, 0.5);
     position: fixed;
     top: 0;
@@ -53,24 +53,26 @@ img {
 
 .logo {
     font-family: var(--fuente-logo);
-    font-size: 3.3rem;
+    font-size: 3rem; /* Tamaño de texto equilibrado */
     color: var(--rojo-corporativo);
     text-transform: uppercase;
     letter-spacing: 6px;
-    margin: 0 0 18px;
+    margin: 10px 0 18px;
     font-weight: 900;
     line-height: 1;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Aumentado ligeramente para mejor equilibrio */
+    gap: 20px;
 }
 
 .logo-icon {
-    height: 4.5rem; /* Aumentado de 3rem a 4.5rem para igualar el texto */
+    height: 90px !important; /* Forzamos el tamaño del rayo en píxeles para que se vea grande */
     width: auto;
-    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.7));
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+    display: block;
+    object-fit: contain;
 }
 
 .nav-list {
