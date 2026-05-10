@@ -1,27 +1,21 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (VERSIÓN FINAL COMPLETA)
+    URBANBLITZ - STYLE.CSS (CORRECCIÓN FINAL - MENÚ UNA SOLA LÍNEA)
    ========================================================================== */
 
-/* 1. RESET INTEGRAL PARA EVITAR ERRORES */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* 1. RESET Y CONFIGURACIÓN BASE */
 body { 
-    font-family: var(--fuente-texto), 'Inter', sans-serif; 
+    margin: 0; 
+    padding: 0;
+    font-family: var(--fuente-texto), sans-serif; 
     background-color: var(--negro-fondo) !important;
     color: var(--blanco-puro); 
     overflow-x: hidden; 
 }
 
-a { text-decoration: none; transition: 0.3s ease; color: inherit; }
-
-/* 2. HEADER (DISEÑO IDÉNTICO A TU IMAGEN: FINO Y FIJO) */
+/* 2. HEADER (MENÚ ULTRA-SLIM IDÉNTICO A LA IMAGEN) */
 .main-header { 
     background-color: var(--negro-menu) !important;
-    height: 65px !important; /* Altura fija para que sea fino */
+    height: 60px !important; /* Forzamos una altura pequeña fija */
     border-bottom: 1px solid var(--rojo-corporativo) !important;
     z-index: 10000 !important; 
     position: fixed !important; 
@@ -37,7 +31,7 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     max-width: var(--max-width);
     margin: 0 auto;
     display: flex !important;
-    flex-direction: row !important; /* Logo y menú en la misma línea */
+    flex-direction: row !important; /* Fuerza horizontal */
     justify-content: space-between !important; 
     align-items: center !important;
     padding: 0 40px !important;
@@ -45,38 +39,45 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 
 .logo { 
     font-family: var(--fuente-logo), cursive !important; 
-    font-size: 1.6rem !important; 
+    font-size: 1.5rem !important; 
     color: var(--rojo-corporativo) !important; 
     text-transform: uppercase; 
-    letter-spacing: 4px !important; 
+    letter-spacing: 3px !important; 
     margin: 0 !important;
-    font-weight: 900;
+    line-height: 1 !important;
 }
 
 .nav-list { 
     display: flex !important; 
-    gap: 30px !important; 
+    flex-direction: row !important;
+    gap: 25px !important; 
     list-style: none !important; 
     padding: 0 !important;
     margin: 0 !important;
 }
 
+.nav-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .nav-list li a { 
     font-weight: 900 !important; 
     text-transform: uppercase; 
-    font-size: 0.8rem !important;
+    font-size: 0.75rem !important; 
     color: var(--blanco-puro) !important;
     letter-spacing: 1px;
+    white-space: nowrap; /* Evita que el texto salte de línea */
 }
 
 .nav-list li a:hover { 
     color: var(--rojo-corporativo) !important; 
 }
 
-/* OCULTAR MENÚ HAMBURGUESA EN PC */
+/* OCULTAR MENÚ HAMBURGUESA EN PC PARA QUE NO MOLESTE */
 .menu-toggle { display: none !important; }
 
-/* 3. HERO (YA ARREGLADO - NO TOCAR) */
+/* 3. HERO (SE AJUSTA EL MARGEN PARA NO QUEDAR BAJO EL MENÚ) */
 .hero {
     position: relative;
     height: 100vh !important;
@@ -85,7 +86,7 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     align-items: center !important;
     justify-content: center !important;
     overflow: hidden;
-    background-color: #000;
+    margin-top: 0; /* Al ser fixed, el hero empieza desde arriba */
 }
 
 .hero-bg-video {
@@ -99,49 +100,24 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 .hero-content { 
     position: relative; 
     z-index: 2; 
-    text-align: center; 
-    width: 100%;
-    padding: 0 20px;
+    text-align: center;
 }
 
 .slogan-hero {
-    font-size: clamp(2.8rem, 7vw, 5.5rem) !important;
+    font-size: clamp(2.5rem, 7vw, 5rem) !important;
     color: #ffffff !important;
     text-transform: uppercase;
     font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    text-shadow: 0 0 20px var(--rojo-corporativo), 0 0 40px var(--rojo-corporativo) !important;
-    display: block;
+    text-shadow: 0 0 20px var(--rojo-corporativo) !important;
 }
 
-.btn-add-cart-hero {
-    display: inline-block;
-    background-color: var(--rojo-corporativo) !important;
-    color: #ffffff !important;
-    padding: 15px 35px;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-top: 20px;
-    border: 2px solid var(--rojo-corporativo);
-    transition: 0.3s;
-}
-
-.btn-add-cart-hero:hover {
-    background-color: white !important;
-    color: var(--rojo-corporativo) !important;
-    border-color: white;
-}
-
-/* 4. SECCIONES DE CONTENIDO */
+/* 4. SECCIONES SIGUIENTES */
 .titulo-categorias-red {
     color: var(--rojo-corporativo);
-    font-size: clamp(2.2rem, 7vw, 4rem);
+    font-size: 2.5rem;
     font-weight: 900;
     text-align: center;
-    margin: 120px 0 40px; 
-    text-transform: uppercase;
+    margin: 100px 0 40px;
 }
 
 .categorias-grid-3 {
@@ -150,14 +126,6 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
     gap: 30px;
     max-width: var(--max-width);
     margin: 0 auto 100px;
-    padding: 0 20px;
-}
-
-.categoria-card-new {
-    background: var(--negro-tarjeta);
-    border: 1px solid var(--gris-borde);
-    transition: 0.3s;
-    overflow: hidden;
 }
 
 .categoria-card-new img {
@@ -169,13 +137,11 @@ a { text-decoration: none; transition: 0.3s ease; color: inherit; }
 /* 5. FOOTER */
 .main-footer { 
     background: var(--negro-footer);
-    border-top: 2px solid var(--rojo-corporativo); 
-    padding: 60px 20px; 
+    border-top: 1px solid var(--rojo-corporativo); 
+    padding: 40px 20px; 
 }
 
-/* 6. RESPONSIVO */
 @media (max-width: 950px) {
     .nav-list { display: none !important; }
-    .menu-toggle { display: block !important; color: white; font-size: 1.5rem; cursor: pointer; }
     .categorias-grid-3 { grid-template-columns: 1fr !important; }
 }
