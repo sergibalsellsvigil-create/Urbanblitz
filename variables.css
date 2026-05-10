@@ -1,4 +1,7 @@
-</html>
+/* ==========================================================================
+    URBANBLITZ - VARIABLES.CSS (CORREGIDO)
+   ========================================================================== */
+
 :root {
     /* COLORES CORPORATIVOS */
     --rojo-corporativo: #ff0000;
@@ -11,10 +14,10 @@
     --texto-secundario: #a0a0a0;
     --gris-borde: #1a1a1a;
     
-    /* EFECTOS */
-    --glow-slogan: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
+    /* EFECTOS DE BRILLO (Mejorados para que se vean como la foto) */
+    --glow-slogan: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.4);
     
-    /* TIPOGRAFÃAS */
+    /* TIPOGRAFIAS */
     --fuente-logo: 'Sedgwick Ave', cursive;
     --fuente-texto: 'Inter', sans-serif;
     
