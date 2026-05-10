@@ -1,183 +1,305 @@
-/* ==========================================================================
-    URBANBLITZ - CSS INTEGRAL CORREGIDO (SOLUCIÓN DROPDOWNS Y CARRUSEL)
+ /* ==========================================================================
+
+    URBANBLITZ - CSS INTEGRAL CORREGIDO (SIN FALLOS)
+
    ========================================================================== */
 
-/* 1. VARIABLES INTEGRADAS */
+
+
+/* 1. VARIABLES INTEGRADAS (Para evitar conflictos) */
+
 :root {
+
     --rojo-corporativo: #ff0000;
+
     --negro-fondo: #050505;
+
     --negro-menu: #000000;
+
     --negro-tarjeta: #0d0d0d;
+
     --blanco-puro: #ffffff;
+
     --fuente-texto: 'Inter', sans-serif;
+
     --max-width: 1200px;
+
     --glow-slogan: 0 0 20px rgba(255, 0, 0, 0.7);
+
 }
 
-/* 2. RESET TOTAL */
+
+
+/* 2. RESET TOTAL (Mata el azul de los enlaces y bordes feos) */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
-body { 
-    font-family: var(--fuente-texto); 
+
+
+body {
+
+    font-family: var(--fuente-texto);
+
     background-color: var(--negro-fondo) !important;
-    color: var(--blanco-puro); 
-    overflow-x: hidden; 
+
+    color: var(--blanco-puro);
+
+    overflow-x: hidden;
+
 }
 
-a { 
-    text-decoration: none !important; 
-    color: inherit !important; 
-    transition: 0.3s; 
+
+
+a {
+
+    text-decoration: none !important;
+
+    color: inherit !important;
+
+    transition: 0.3s;
+
 }
+
+
 
 /* 3. HEADER (Logo y Menú Centrados) */
-.main-header { 
+
+.main-header {
+
     background-color: var(--negro-menu);
-    padding: 25px 0; 
+
+    padding: 25px 0;
+
     border-bottom: 2px solid var(--rojo-corporativo);
+
     position: sticky;
+
     top: 0;
+
     z-index: 10000;
+
 }
+
+
 
 .nav-container {
+
     max-width: var(--max-width);
+
     margin: 0 auto;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     text-align: center;
+
 }
 
-.logo { 
-    font-size: clamp(2.5rem, 6vw, 3.8rem); 
-    color: var(--rojo-corporativo) !important; 
-    text-transform: uppercase; 
+
+
+.logo {
+
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+
+    color: var(--rojo-corporativo) !important;
+
+    text-transform: uppercase;
+
     letter-spacing: 12px;
+
     font-weight: 900;
+
     margin-bottom: 15px;
+
 }
 
-.nav-list { 
-    display: flex; 
-    gap: 30px; 
-    list-style: none; 
-}
 
-.nav-list li a { 
-    font-weight: 600; 
-    text-transform: uppercase; 
-    font-size: 0.9rem;
-    color: var(--blanco-puro) !important;
-}
 
-.nav-list li a:hover { 
-    color: var(--rojo-corporativo) !important; 
-}
+.nav-list {
 
-/* --- ARREGLO DE DROPDOWNS (AÑADIDO) --- */
-.dropdown {
-    position: relative;
-}
+    display: flex;
 
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--negro-menu);
-    border: 1px solid var(--rojo-corporativo);
+    gap: 30px;
+
     list-style: none;
-    min-width: 180px;
-    display: none; /* Oculto por defecto */
-    z-index: 1000;
-    padding: 10px 0;
+
 }
 
-.dropdown-menu li a {
-    padding: 10px 20px;
-    display: block;
-    font-size: 0.8rem;
-    white-space: nowrap;
+
+
+.nav-list li a {
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    font-size: 0.9rem;
+
+    color: var(--blanco-puro) !important;
+
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block; /* Mostrar al pasar el ratón */
-}
-/* -------------------------------------- */
 
-.menu-toggle { display: none; } 
+
+.nav-list li a:hover {
+
+    color: var(--rojo-corporativo) !important;
+
+}
+
+
+
+.menu-toggle { display: none; } /* Oculto en PC */
+
+
 
 /* 4. CARRUSEL CON MOVIMIENTO REAL */
-.new-drops-carousel { 
+
+.new-drops-carousel {
+
     width: 100%;
-    overflow: hidden; 
-    background: #000; 
+
+    overflow: hidden;
+
+    background: #000;
+
     padding: 60px 0;
+
 }
 
-.carousel-track { 
-    display: flex; 
-    width: max-content; 
-    animation: scroll-infinito 25s linear infinite !important; 
+
+
+.carousel-track {
+
+    display: flex;
+
+    width: max-content;
+
+    animation: scroll-infinito 25s linear infinite !important; /* Animación activada */
+
 }
+
+
 
 .carousel-track img {
-    width: 300px; 
+
+    width: 300px;
+
     height: 400px;
-    object-fit: cover; 
-    margin: 0 15px; 
+
+    object-fit: cover;
+
+    margin: 0 15px;
+
     border: 1px solid #333;
+
 }
+
+
+
+/* Movimiento del carrusel */
 
 @keyframes scroll-infinito {
+
     0% { transform: translateX(0); }
+
     100% { transform: translateX(-50%); }
+
 }
 
-/* 5. SECCIÓN 3 CAJETILLAS */
+
+
+/* 5. SECCIÓN 3 CAJETILLAS (DESCUBRE EL CLAN) */
+
 .categorias-grid-3 {
+
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important; 
+
+    grid-template-columns: repeat(3, 1fr) !important; /* 3 Columnas fijas en PC */
+
     gap: 30px;
+
     max-width: var(--max-width);
+
     margin: 80px auto;
+
     padding: 0 20px;
+
 }
+
+
 
 .categoria-card-new {
+
     background: var(--negro-tarjeta);
+
     border: 1px solid #222;
+
     overflow: hidden;
+
     transition: 0.3s;
+
 }
+
+
 
 .categoria-card-new:hover { border-color: var(--rojo-corporativo); }
 
+
+
 .categoria-card-new img {
+
     width: 100%;
+
     height: 450px;
+
     object-fit: cover;
+
 }
+
+
 
 .info-card-content { padding: 25px; text-align: center; }
 
+
+
 .btn-rojo-urban {
+
     display: inline-block;
+
     background-color: var(--rojo-corporativo);
+
     color: #fff !important;
+
     padding: 12px 25px;
+
     font-weight: 900;
+
     text-transform: uppercase;
+
     margin-top: 15px;
+
 }
 
+
+
 /* 6. RESPONSIVO (MÓVIL) */
+
 @media (max-width: 950px) {
+
     .nav-list { display: none; }
+
     .categorias-grid-3 { grid-template-columns: 1fr !important; }
+
 }
