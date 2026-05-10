@@ -1,8 +1,8 @@
 /* ==========================================================================
-    URBANBLITZ - STYLE.CSS (CORRECCIÓN ESENCIAL)
+    URBANBLITZ - STYLE.CSS (CORRECCIÓN DEFINITIVA DE INTERACTIVIDAD)
    ========================================================================== */
 
-/* RESET Y FONDO GLOBAL */
+/* 1. RESET Y CONFIGURACIÓN BASE */
 body { 
     margin: 0; 
     font-family: var(--fuente-texto); 
@@ -12,15 +12,13 @@ body {
     line-height: 1.6; 
 }
 
-/* Transición global para que todo cambie suavemente */
-a, button, i, img { 
+/* Transición para que los cambios de color no sean bruscos */
+a, button, i { 
     text-decoration: none; 
     transition: all 0.3s ease-in-out !important; 
 }
 
-/* ==========================================================================
-    HEADER & NAVEGACIÓN
-   ========================================================================== */
+/* 2. HEADER Y NAVEGACIÓN */
 .main-header { 
     background-color: var(--negro-menu);
     padding: 20px 0; 
@@ -49,18 +47,7 @@ a, button, i, img {
     color: var(--rojo-corporativo); 
     text-transform: uppercase; 
     letter-spacing: 10px;
-    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.3));
     text-align: center;
-}
-
-.menu-toggle {
-    display: none; 
-    background: none;
-    border: none;
-    color: var(--rojo-corporativo);
-    font-size: 1.8rem;
-    cursor: pointer;
-    z-index: 1001;
 }
 
 .nav-list { 
@@ -77,14 +64,16 @@ a, button, i, img {
     text-transform: uppercase; 
     font-size: 0.85rem; 
     color: var(--blanco-puro);
-    letter-spacing: 1px;
 }
 
-.nav-list li a:hover, .nav-list li a.active { 
+/* HOVER NAVEGACIÓN PRINCIPAL */
+.nav-list li a:hover, 
+.nav-list li a.active { 
     color: var(--rojo-corporativo) !important; 
     text-shadow: 0 0 8px var(--rojo-corporativo);
 }
 
+/* DROPDOWN */
 .dropdown { position: relative; }
 .dropdown-menu { 
     display: none; 
@@ -100,148 +89,79 @@ a, button, i, img {
     z-index: 10001;
 }
 .dropdown:hover .dropdown-menu { display: block; }
-.dropdown-menu li a { padding: 10px 20px; display: block; text-align: center; font-size: 0.75rem;}
+.dropdown-menu li a { padding: 10px 20px; display: block; text-align: center; color: white !important; }
 .dropdown-menu li a:hover { background: var(--rojo-corporativo) !important; color: white !important; }
 
-/* ==========================================================================
-    HERO & CARRUSEL
-   ========================================================================== */
+/* 3. HERO SECTION */
 .hero {
     position: relative;
     height: 100vh;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    background-color: #000;
 }
 
 .hero-bg-video {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    z-index: 1;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 1;
     filter: brightness(0.4); 
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 0 20px;
-}
-
-.slogan-hero {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    color: #ffffff;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
-    margin-bottom: 20px;
-}
+.hero-content { position: relative; z-index: 2; }
 
 .btn-add-cart-hero {
     display: inline-block;
     background-color: var(--rojo-corporativo);
-    color: var(--blanco-puro) !important;
+    color: white !important;
     padding: 15px 45px; 
     font-weight: 900;
     text-transform: uppercase;
-    box-shadow: var(--glow-boton);
-    cursor: pointer;
 }
 
 .btn-add-cart-hero:hover {
     background-color: white !important;
     color: var(--rojo-corporativo) !important;
     transform: translateY(-3px);
-    box-shadow: 0 0 20px white;
 }
 
-.carousel-track img {
-    width: 280px;
-    height: 380px;
-    object-fit: cover;
-    margin: 0 15px;
-    border: 1px solid #222;
-}
-
-/* ==========================================================================
-    GRID DE PRODUCTOS Y CATEGORÍAS
-   ========================================================================== */
+/* 4. BOTONES DEL INDEX (ACCEDER, LEER MÁS...) - AQUÍ ESTABA EL FALLO */
 .categorias-grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: var(--max-width);
-    margin: 0 auto 100px;
+    margin: 50px auto;
     padding: 0 20px;
 }
 
-.categoria-card-new {
-    background: var(--negro-tarjeta);
-    border: 1px solid var(--gris-borde);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden; /* Necesario para el zoom */
-}
-
-.categoria-card-new img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Efecto Zoom Suave */
-.categoria-card-new:hover img {
-    transform: scale(1.05);
-}
-
-.info-card-content {
-    padding: 25px;
-    text-align: center;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-}
-
-/* Botones del Index (Acceder, Leer más, Saber más) */
 .btn-rojo-urban {
     background-color: var(--rojo-corporativo) !important;
-    color: #fff !important;
-    padding: 15px 30px;
+    color: white !important;
+    padding: 12px 25px;
     font-weight: 900;
-    text-transform: uppercase;
-    width: fit-content;
-    border: none;
+    display: inline-block;
     margin-top: 15px;
-    cursor: pointer;
+    border: none;
 }
 
-/* Hover Blanco para botones del Index */
+/* HOVER BOTONES INDEX: DE ROJO A BLANCO */
 .btn-rojo-urban:hover {
     background-color: white !important;
     color: var(--rojo-corporativo) !important;
-    transform: translateY(-2px);
+    transform: scale(1.05);
 }
 
-/* ==========================================================================
-    FOOTER BASE
-   ========================================================================== */
+/* 5. FOOTER (CORRECCIÓN DE ENLACES) */
 .main-footer { 
     background: var(--negro-footer); 
     border-top: 2px solid var(--rojo-corporativo); 
     padding: 60px 20px 30px; 
     margin-top: 80px; 
 }
+
 .footer-container { 
     max-width: var(--max-width); 
     margin: 0 auto; 
@@ -250,33 +170,27 @@ a, button, i, img {
     gap: 40px; 
 }
 
-.footer-socials a { color: white !important; font-size: 1.5rem; }
-.footer-socials a:hover { 
-    color: var(--rojo-corporativo) !important; 
-    transform: translateY(-5px);
+/* Redes sociales */
+.footer-socials a { color: white !important; font-size: 1.5rem; margin-right: 10px; }
+.footer-socials a:hover { color: var(--rojo-corporativo) !important; transform: translateY(-5px); }
+
+/* Enlaces de las listas del footer */
+.footer-list { list-style: none; padding: 0; }
+.footer-list li a { 
+    color: #ccc !important; 
+    font-size: 0.9rem; 
+    display: inline-block;
 }
 
-.footer-list { list-style: none; padding: 0; }
-.footer-list li a { color: #ccc !important; font-size: 0.9rem; }
-
-/* Enlaces Footer Hover Rojo */
+/* HOVER ENLACES FOOTER: DE GRIS A ROJO */
 .footer-list li a:hover { 
     color: var(--rojo-corporativo) !important; 
-    padding-left: 5px;
+    padding-left: 8px; /* Efecto de movimiento */
 }
 
-/* ==========================================================================
-    RESPONSIVO
-   ========================================================================== */
+/* 6. RESPONSIVO BÁSICO */
 @media (max-width: 950px) {
-    .nav-container { flex-direction: row; justify-content: center; padding: 15px 20px; position: relative;}
-    .logo { font-size: 1.8rem; letter-spacing: 5px; margin: 0 auto !important; }
-    .menu-toggle { display: block; position: absolute; left: 20px; top: 50%; transform: translateY(-50%);}
-    .nav-list { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--negro-menu); flex-direction: column; gap: 0; border-bottom: 2px solid var(--rojo-corporativo); margin: 0;}
-    .nav-list.active { display: flex; }
-    .nav-list li { width: 100%; text-align: center; border-bottom: 1px solid #222; }
-    .nav-list li a { display: block; padding: 20px; font-size: 1.1rem; }
-    .categorias-grid-3 { grid-template-columns: 1fr; gap: 40px;}
-    .categoria-card-new img { height: 350px; }
-    .footer-container { grid-template-columns: 1fr; text-align: center; gap: 40px;}
+    .nav-list { display: none; }
+    .categorias-grid-3 { grid-template-columns: 1fr; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
 }
