@@ -1,5 +1,5 @@
 /* ==========================================================================
-   URBANBLITZ - STYLE.CSS DEFINITIVO (CORRECCIÓN DE SOLAPAMIENTO)
+   URBANBLITZ - STYLE.CSS DEFINITIVO (CORREGIDO)
    ========================================================================== */
 
 /* -------------------------------------------------------------------------
@@ -33,7 +33,7 @@ img {
    ------------------------------------------------------------------------- */
 .main-header {
     background-color: var(--negro-menu);
-    padding: 20px 0 0;
+    padding: 20px 0 0; /* Ajustado para mejor equilibrio */
     border-bottom: 2px solid #FF0000;
     position: fixed;
     top: 0;
@@ -53,7 +53,7 @@ img {
 
 .logo {
     font-family: var(--fuente-logo);
-    font-size: 3rem;
+    font-size: 3.6rem;
     color: var(--rojo-corporativo);
     text-transform: uppercase;
     letter-spacing: 6px;
@@ -68,7 +68,7 @@ img {
 }
 
 .logo-icon {
-    height: 90px !important;
+    height: 90px !important; /* Rayo grande y definido */
     width: auto;
     filter: drop-shadow(0 0 10px #FF0000);
     display: block;
@@ -174,12 +174,12 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   4. HERO (CORREGIDO PARA NO SER TAPADO)
+   4. HERO (CORREGIDO: YA NO SE OCULTA BAJO EL MENU)
    ------------------------------------------------------------------------- */
 .hero {
     position: relative;
     min-height: 100vh;
-    padding-top: 220px; /* Espacio para que el menú no tape el eslogan */
+    padding-top: 220px; /* Empuja el contenido hacia abajo del menú */
     width: 100%;
     display: flex;
     align-items: center;
@@ -264,6 +264,8 @@ img {
     border-top: 1px solid var(--gris-borde);
     border-bottom: 1px solid var(--gris-borde);
     padding: 25px 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .carousel-header {
@@ -522,15 +524,15 @@ img {
 }
 
 /* -------------------------------------------------------------------------
-   9. PAGINAS INTERIORES (CORREGIDO PARA NO SER TAPADO)
+   9. PAGINAS INTERIORES (CORREGIDO: MAS ESPACIO SUPERIOR)
    ------------------------------------------------------------------------- */
 .shop-header {
-    padding: 260px 20px 40px; /* Aumentado para dejar espacio al logo */
+    padding: 260px 20px 60px; /* Aumentado para el nuevo tamaño del logo */
     text-align: center;
 }
 
 .page-info-container {
-    padding: 260px 20px 40px; /* Aumentado para dejar espacio al logo */
+    padding: 260px 20px 50px; /* Aumentado para el nuevo tamaño del logo */
     text-align: center;
 }
 
@@ -540,7 +542,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 5px;
     color: var(--blanco-puro);
-    margin: 0 0 20px;
+    margin: 0 0 15px;
 }
 
 .info-text,
@@ -548,7 +550,7 @@ img {
     font-size: 1rem;
     color: var(--texto-secundario);
     text-align: center;
-    margin: 0 auto 10px;
+    margin: 0 auto;
     max-width: 600px;
     line-height: 1.6;
 }
@@ -762,6 +764,6 @@ img {
 
     .shop-header,
     .page-info-container {
-        padding-top: 150px;
+        padding-top: 160px; /* Ajuste móvil */
     }
 }
