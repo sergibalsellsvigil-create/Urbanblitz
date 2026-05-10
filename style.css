@@ -1,22 +1,15 @@
-/* ==========================================================================
-    URBANBLITZ - STYLE.CSS (DEFINITIVO: CORRECCIÓN MENÚ Y BOTÓN HERO)
-   ========================================================================== */
-
-/* RESET Y FONDO GLOBAL */
+/* RESET GLOBAL */
 body { 
     margin: 0; 
     font-family: var(--fuente-texto); 
     background-color: var(--negro-fondo) !important;
     color: var(--blanco-puro); 
     overflow-x: hidden; 
-    line-height: 1.6; 
 }
 
-a { text-decoration: none; transition: 0.3s; }
+a { text-decoration: none; transition: 0.3s; color: inherit; }
 
-/* ==========================================================================
-    HEADER & NAVEGACIÓN (CORREGIDO)
-   ========================================================================== */
+/* HEADER Y NAVEGACIÓN CORREGIDA */
 .main-header { 
     background-color: var(--negro-menu);
     padding: 20px 0; 
@@ -32,8 +25,6 @@ a { text-decoration: none; transition: 0.3s; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    padding: 0 20px;
 }
 
 .logo { 
@@ -42,33 +33,28 @@ a { text-decoration: none; transition: 0.3s; }
     color: var(--rojo-corporativo); 
     text-transform: uppercase; 
     letter-spacing: 10px;
-    text-align: center;
     margin-bottom: 10px;
 }
 
 .nav-list { 
     display: flex; 
-    justify-content: center; 
     gap: 25px; 
     list-style: none; 
     padding: 0;
-    margin: 0;
 }
 
-.nav-list li { position: relative; } /* Necesario para los submenús */
+.nav-list li { position: relative; }
 
 .nav-list li a { 
     font-weight: 600; 
     text-transform: uppercase; 
-    font-size: 0.85rem; 
+    font-size: 0.85rem;
     color: var(--blanco-puro);
-    padding: 10px 0;
-    display: block;
 }
 
 .nav-list li a:hover, .nav-list li a.active { color: var(--rojo-corporativo); }
 
-/* --- ARREGLO SUBMENÚS (DROPDOWNS) --- */
+/* SUBMENÚS (DROPDOWNS) - ESTO ARREGLA EL MENÚ ROTO */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -79,24 +65,13 @@ a { text-decoration: none; transition: 0.3s; }
     min-width: 160px;
     list-style: none;
     padding: 10px 0;
-    display: none; /* Oculto por defecto */
+    display: none; /* Se oculta hasta hacer hover */
     z-index: 1000;
 }
 
-.dropdown-menu li a {
-    padding: 8px 20px;
-    font-size: 0.75rem;
-    text-align: center;
-}
+.dropdown:hover .dropdown-menu { display: block; }
 
-/* Mostrar al pasar el ratón */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* ==========================================================================
-    HERO (CORRECCIÓN BOTÓN EXPLORAR)
-   ========================================================================== */
+/* HERO Y BOTÓN EXPLORAR (ARREGLA EL COLOR AZUL) */
 .hero {
     position: relative;
     height: 100vh;
@@ -115,47 +90,38 @@ a { text-decoration: none; transition: 0.3s; }
 
 .hero-content { position: relative; z-index: 2; text-align: center; }
 
-.slogan-hero {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    color: #ffffff;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px var(--rojo-corporativo), 0 0 30px var(--rojo-corporativo);
-    margin-bottom: 20px;
-}
-
-/* ARREGLO BOTÓN AZUL DEL HERO */
 .btn-add-cart-hero {
     display: inline-block;
-    background-color: var(--rojo-corporativo);
-    color: #ffffff !important;
+    background-color: var(--rojo-corporativo) !important;
+    color: #ffffff !important; /* Forza el color blanco */
     padding: 15px 35px;
     font-weight: 900;
-    text-transform: uppercase;
+    margin-top: 20px;
     border: 2px solid var(--rojo-corporativo);
-    transition: 0.3s;
-    cursor: pointer;
-    font-size: 1rem;
-    letter-spacing: 2px;
 }
 
-.btn-add-cart-hero:hover {
-    background-color: #ffffff;
-    color: var(--rojo-corporativo) !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+/* CARRUSEL PRÓXIMAMENTE (ARREGLA LAS FOTOS VACÍAS) */
+.texto-proximamente-red {
+    color: var(--rojo-corporativo);
+    text-align: center;
+    font-size: 2rem;
+    margin: 50px 0;
 }
 
-/* ==========================================================================
-    CARRUSEL Y CATEGORÍAS (SIN CAMBIOS)
-   ========================================================================== */
+.new-drops-carousel { overflow: hidden; background: #000; padding: 20px 0; }
+
 .carousel-track {
     display: flex;
-    width: max-content; 
-    animation: scroll-infinito 25s linear infinite;
+    width: max-content;
+    animation: scroll-infinito 20s linear infinite;
 }
 
 .carousel-track img {
-    width: 280px; height: 380px;
-    object-fit: cover; margin: 0 15px;
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    margin: 0 15px;
+    border: 1px solid #333; /* Los cuadraditos que querías */
 }
 
 @keyframes scroll-infinito {
@@ -163,81 +129,33 @@ a { text-decoration: none; transition: 0.3s; }
     100% { transform: translateX(-50%); }
 }
 
-.titulo-categorias-red {
-    color: var(--rojo-corporativo);
-    font-size: clamp(2rem, 7vw, 4.5rem);
-    font-weight: 900;
-    text-align: center;
-    margin: 60px 0 30px;
-}
-
-.categorias-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: var(--max-width);
-    margin: 0 auto 100px;
-    padding: 0 20px;
-}
-
-.categoria-card-new {
-    background: var(--negro-tarjeta);
-    border: 1px solid var(--gris-borde);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.categoria-card-new img {
-    width: 100%; height: 450px;
-    object-fit: cover; display: block;
-    transition: transform 0.5s ease;
-}
-
-.categoria-card-new:hover img { transform: scale(1.1); }
-
-.info-card-content {
-    padding: 25px; text-align: center;
-    display: flex; flex-direction: column;
-    align-items: center; background: var(--negro-tarjeta);
-}
-
-.btn-rojo-urban {
-    background-color: var(--rojo-corporativo) !important;
-    color: #fff !important;
-    padding: 15px 30px;
-    font-weight: 900;
-    text-transform: uppercase;
-    border: none;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.btn-rojo-urban:hover {
-    background-color: white !important;
-    color: var(--rojo-corporativo) !important;
-}
-
-/* ==========================================================================
-    FOOTER & RESPONSIVO
-   ========================================================================== */
+/* FOOTER (ARREGLA LOS LINKS AZULES) */
 .main-footer { 
-    background: var(--negro-footer); 
+    background: var(--negro-footer);
     border-top: 2px solid var(--rojo-corporativo); 
     padding: 60px 20px; 
+    margin-top: 50px;
 }
 
 .footer-container { 
     max-width: var(--max-width); 
     margin: 0 auto; 
-    display: grid; 
+    display: grid;
     grid-template-columns: 2fr 1fr 1fr; 
+    gap: 40px;
 }
 
+.footer-list { list-style: none; padding: 0; }
+
+.footer-list li a { 
+    color: var(--texto-secundario) !important; /* Quita el azul */
+    font-size: 0.9rem;
+}
+
+.footer-list li a:hover { color: var(--rojo-corporativo) !important; }
+
+/* RESPONSIVO */
 @media (max-width: 950px) {
-    .menu-toggle { display: block !important; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); }
-    .nav-list { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--negro-menu); flex-direction: column; }
-    .nav-list.active { display: flex; }
-    .categorias-grid-3 { grid-template-columns: 1fr; }
-    .dropdown-menu { position: static; transform: none; width: 100%; }
+    .nav-list { display: none; } /* Aquí podrías activar tu menú hamburguesa */
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
 }
