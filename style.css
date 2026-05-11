@@ -492,7 +492,7 @@ img {
    8. GRID DE PRODUCTOS
    ------------------------------------------------------------------------- */
 .shop-header {
-    padding: 200px 20px 60px;
+    padding: 260px 20px 100px;
     text-align: center;
 }
 
@@ -502,7 +502,7 @@ img {
 }
 
 .section-title {
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 5px;
