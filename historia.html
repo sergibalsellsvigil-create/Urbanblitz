@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiénes somos | Urbanblitz</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="style.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Sedgwick+Ave&display=swap" rel="stylesheet">
-    
     <style>
-        /* Ajustes específicos para la página de historia */
         .values-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -23,16 +20,16 @@
 
         .value-card-story {
             background: var(--negro-tarjeta);
-            border: 1px solid var(--gris-borde-fuerte);
+            border: 1px solid var(--gris-borde);
             padding: 50px 30px;
             text-align: center;
-            transition: var(--transicion);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             position: relative;
         }
 
         .value-card-story:hover {
             border-color: var(--rojo-corporativo);
-            box-shadow: var(--glow-suave);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.35), 0 0 60px rgba(255, 0, 0, 0.15);
             transform: translateY(-8px);
         }
 
@@ -63,7 +60,7 @@
             font-family: 'Sedgwick Ave', cursive;
             font-size: clamp(3rem, 8vw, 4.5rem);
             color: var(--rojo-corporativo);
-            text-shadow: var(--glow-rojo);
+            text-shadow: 0 0 20px rgba(255,0,0,0.8), 0 0 40px rgba(255,0,0,0.4);
             margin-bottom: 40px;
         }
 
@@ -82,9 +79,12 @@
 </head>
 
 <body>
-
     <header class="main-header">
         <nav class="nav-container">
+            <div class="nav-user-actions-top">
+                <a href="pagina_sesion.html" class="btn-login-text">INICIAR SESIÓN</a>
+                <a href="pagina_registro.html" class="btn-register-glow">UNIRSE AL CLAN</a>
+            </div>
             <h1 class="logo">URBANBLITZ</h1>
             <ul class="nav-list">
                 <li><a href="index.html">Inicio</a></li>
@@ -110,7 +110,7 @@
     </header>
 
     <main>
-        <section style="padding: 100px 20px 40px; text-align: center;">
+        <section style="padding: 220px 20px 40px; text-align: center;">
             <h2 style="font-weight: 900; font-size: clamp(2rem, 5vw, 3.5rem); text-transform: uppercase; letter-spacing: 4px;">NUESTRO <span style="color: var(--rojo-corporativo);">ADN</span></h2>
             <p style="color: var(--texto-secundario); font-size: 1.1rem; letter-spacing: 2px;">LOS PILARES QUE SOSTIENEN EL CLAN</p>
         </section>
@@ -120,27 +120,22 @@
                 <h3>Actitud</h3>
                 <p>No pedimos permiso. Nuestra presencia habla antes que nosotros. La calle es de los que se atreven a tomarla sin preguntar.</p>
             </article>
-
             <article class="value-card-story">
                 <h3>Calidad</h3>
                 <p>Cada prenda es una armadura. Materiales testados bajo condiciones reales para resistir el ritmo frenético del asfalto.</p>
             </article>
-
             <article class="value-card-story">
                 <h3>Comunidad</h3>
                 <p>Urbanblitz no es ropa, es un clan. Una red global de inconformistas unidos por una misma visión: dejar huella.</p>
             </article>
-
             <article class="value-card-story">
                 <h3>Diseño</h3>
                 <p>Minimalismo agresivo. Vanguardia urbana que rompe con la monotonía comercial para los que buscan algo real.</p>
             </article>
-
             <article class="value-card-story">
                 <h3>Superación</h3>
                 <p>El límite solo existe en tu cabeza. Cada caída en el asfalto es el impulso necesario para el siguiente gran salto.</p>
             </article>
-
             <article class="value-card-story">
                 <h3>Autenticidad</h3>
                 <p>Sin copias, sin filtros. Ser fiel a uno mismo es la única regla que nunca negociamos bajo ninguna circunstancia.</p>
@@ -158,52 +153,45 @@
             </article>
         </section>
 
-       <section style="padding: 10px 20px 80px; text-align: center; background: #000;">
+        <section style="padding: 10px 20px 80px; text-align: center; background: #000;">
             <h2 class="slogan-historia">NO LIMITS. NO EXCUSES.</h2>
             <a href="pagina_registro.html" class="btn-add-cart-hero">UNIRSE AL MOVIMIENTO</a>
         </section>
     </main>
-   <footer class="main-footer">
-    <section class="footer-container">
-        <article class="footer-brand">
-            <h3 class="logo-footer">URBANBLITZ</h3>
-            <p class="slogan">NO LIMITS. NO EXCUSES.</p>
-            <p class="est-date">EST. 2026 — Streetwear Collective.</p>
-            
-            <div class="footer-socials">
-                <a href="https://www.instagram.com/urbanblitz.shop2026?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.tiktok.com/@urbanblitz.shop?is_from_webapp=1&sender_device=pc" target="_blank" aria-label="TikTok">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-            </div>
-        </article>
 
-        <nav class="footer-nav">
-            <h3 class="footer-title">Explorar</h3>
-            <ul class="footer-list">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="historia.html">Quiénes somos</a></li>
-                <li><a href="tienda.html">Tienda Oficial</a></li>
-                <li><a href="colecciones.html">Colecciones</a></li>
-            </ul>
-        </nav>
-
-        <nav class="footer-support">
-            <h3 class="footer-title">Atención al Clan</h3>
-            <ul class="footer-list">
-                <li><a href="contacto.html" class="highlight-link">¿Necesitas ayuda?</a></li>
-                <li><a href="aviso-legal.html">Aviso Legal</a></li>
-                <li><a href="politica-privacidad.html">Privacidad</a></li>
-            </ul>
-        </nav>
-    </section>
-
-    <section class="footer-legal">
-        <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
-    </section>
-</footer>
+    <footer class="main-footer">
+        <section class="footer-container">
+            <article class="footer-brand">
+                <h3 class="logo-footer">URBANBLITZ</h3>
+                <p class="slogan">NO LIMITS. NO EXCUSES.</p>
+                <p class="est-date">EST. 2026 — Streetwear Collective.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/urbanblitz.shop2026" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@urbanblitz.shop" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </article>
+            <nav class="footer-nav">
+                <h3 class="footer-title">Explorar</h3>
+                <ul class="footer-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="historia.html">Quiénes somos</a></li>
+                    <li><a href="tienda.html">Tienda Oficial</a></li>
+                    <li><a href="colecciones.html">Colecciones</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-support">
+                <h3 class="footer-title">Atención al Clan</h3>
+                <ul class="footer-list">
+                    <li><a href="contacto.html" class="highlight-link">¿Necesitas ayuda?</a></li>
+                    <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="politica-privacidad.html">Privacidad</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="footer-legal">
+            <p>© 2026 Urbanblitz — Built for the streets. All Rights Reserved.</p>
+        </section>
+    </footer>
 
     <script src="main.js"></script>
 </body>
