@@ -22,7 +22,7 @@ El proyecto se encuentra actualmente en **fase activa de desarrollo y diseño fr
 
 * **HTML5** - Estructuración semántica del contenido de la tienda y las secciones.
 * **CSS3** - Maquetación visual, diseño de interfaz personalizada, estilos y estética de marca.
-
+* **JavaScript** - Lógica Frontend nativa e interacciones dinámicas con el usuario, asentando las bases para la futura migración a entornos reactivos. 
 ---
 
 ## 🔧 Cómo Visualizar el Estado Actual
